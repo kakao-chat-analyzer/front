@@ -62,7 +62,7 @@
   top: 741px;
 }
 
-.e14_41 {
+.e14_41 { /*  박스  */
   background-color: rgba(55.79890765249729, 49.05743859708309, 141.51171773672104, 1);
   width: 400px;
   height: 48px;
@@ -75,7 +75,7 @@
   border-bottom-right-radius: 100px;
 }
 
-.e14_42 {
+.e14_42 {  /*  글자  */
   color: rgba(255, 255, 255, 1);
   width: 339.45947265625px;
   height: 26.399999618530273px;
@@ -170,16 +170,87 @@
 }
 
 .e14_44 {
-  width: 168px;
-  height: 168px;
-  position: absolute;
-  left: 874px;
-  top: 232px;
-  background-image: url(images/image_1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	width:229px;
+	height:229px;
+	position:absolute;
+	left:843px;
+	top:179px;
+  border-radius: 20%;
+	background-image:url(../images/image_1.png);
+	background-repeat:no-repeat;
+	background-size:cover;
 }
 
+
+
+.login-wrapper {
+  width: 400px;
+  height: 350px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.login-wrapper>h2 {
+  font-size: 24px;
+  color: #6A24FE;
+  margin-bottom: 20px;
+}
+
+#login-form>input[type = "text"]{
+  background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
+  width: 369px;
+  height: 45px;
+  position: absolute;
+  left: 775px;
+  top: 573px;
+  /* border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px; */
+  border-width: 0;
+  outline: none;
+  font-size: 26px;
+  font-family: 'Noto Sans CJK KR regular';
+}
+#login-form>input[type="password"] {
+  background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
+  width: 369px;
+  height: 45px;
+  position: absolute;
+  left: 775px;
+  top: 650px;
+  /* border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px; */
+  border-width: 0;
+  outline: none;
+  font-size: 26px;
+  font-family: 'Noto Sans CJK KR regular';
+}
+
+#login-form>input::placeholder {
+  color: rgba(163.62499594688416, 163.62499594688416, 163.62499594688416, 1);
+  font-size: 26px;
+  text-align: left;
+}
+
+#login-form>input[type="submit"] {
+  background-color: rgba(55.79890765249729, 49.05743859708309, 141.51171773672104, 1);
+  color: rgba(255, 255, 255, 1);
+  width: 400px;
+  height: 48px;
+  position: absolute;
+  left: 760px;
+  top: 741px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  font-family: 'Noto Sans CJK KR bold';
+  font-size: 26px;
+}
 
 
 
