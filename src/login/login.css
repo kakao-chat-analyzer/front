@@ -236,7 +236,7 @@
   text-align: left;
 }
 
-#login-form>input[type="submit"] {
+#login-form>button[type="submit"] {
   background-color: rgba(55.79890765249729, 49.05743859708309, 141.51171773672104, 1);
   color: rgba(255, 255, 255, 1);
   width: 400px;

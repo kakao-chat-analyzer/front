@@ -31,13 +31,13 @@ class App extends Component {
                 </div><span class="e28_18">이메일</span><span class="e28_24">회원가입</span>
                 
                
-                <form method="post" action="서버의url" id="register-form">
-                    <input type="text" name="userName" placeholder="아이디를 입력해주세요."></input>
+                <form method="post" action="localhost:8080/api/register" id="register-form">
+                    <input type="text" name="userId" placeholder="아이디를 입력해주세요."></input>
                     <input type="password" name="userPassword" placeholder="비밀번호를 입력해주세요."></input>
                     <input type="password" name="userPassword_check" placeholder="비밀번호를 다시 한 번 입력해주세요."></input>
                     <input type="text" name="user" placeholder="이름을 입력해주세요."></input>
                     <input type="text" name="email" placeholder="이메일을 입력해주세요."></input>
-                    <input type="submit" value="가입하기"></input>
+                    <button type="submit" id="submit" style={{ cursor: "pointer" }} >가입하기</button>
                 </form>
             </div>
         );

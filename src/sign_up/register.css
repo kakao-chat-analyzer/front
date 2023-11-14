@@ -318,7 +318,7 @@
     letter-spacing: 0;
 }
 
-#register-form>input[name="userName"] {
+#register-form>input[name="userId"] {
     background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
     width: 369px;
     height: 45px;
