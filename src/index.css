@@ -42,7 +42,7 @@ body {
 
 
 @font-face {
-  font-family: 'Noto Sans CJK KR ';
+  font-family: 'Noto Sans CJK KR';
   font-style: normal;
   font-weight: 500;
   src: url("fonts/NotoSansKR-Medium.woff2") format('woff2'),

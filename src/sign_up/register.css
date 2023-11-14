@@ -1,0 +1,431 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.e13_17 {
+    overflow: hidden;
+}
+
+.e13_17 {
+    background-color: rgba(186.0000041127205, 206.0000029206276, 224.000001847744, 1);
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+}
+
+.e13_19 {
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.25);
+    background-color: rgba(253.0000001192093, 222.00000196695328, 69.00000348687172, 1);
+    width: 915px;
+    height: 930px;
+    position: absolute;
+    left: 502px;
+    top: 75px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.e48_23 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 535px;
+    top: 107px;
+    background-image: url(../images/back_button.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.e13_26 {
+    width: 204.34017944335938px;
+    height: 61.30205154418945px;
+    position: absolute;
+    left: 858px;
+    top: 856px;
+}
+
+.e13_27 {
+    background-color: rgba(55.79890765249729, 49.05743859708309, 141.51171773672104, 1);
+    width: 204.34017944335938px;
+    height: 61.30205154418945px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.e13_28 {
+    color: rgba(255, 255, 255, 1);
+    width: 123.39002990722656px;
+    height: 36.15249252319336px;
+    position: absolute;
+    left: 40.08203125px;
+    top: 12.57470703125px;
+    font-family: Noto Sans KR;
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 0;
+}
+
+.e13_20 {
+    width: 436.099365234375px;
+    height: 60.94882583618164px;
+    position: absolute;
+    left: 768.9005737304688px;
+    top: 430.18585205078125px;
+}
+
+.e13_21 {
+    background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
+    width: 436.099365234375px;
+    height: 60.94882583618164px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.e28_4 {
+    color: rgba(163.62499594688416, 163.62499594688416, 163.62499594688416, 1);
+    width: 387.7606506347656px;
+    height: 36.77946472167969px;
+    position: absolute;
+    left: 13.660934448242188px;
+    top: 11.559138298034668px;
+    font-family: Noto Sans KR;
+    text-align: left;
+    font-size: 22px;
+    letter-spacing: 0;
+}
+
+.e13_23 {
+    width: 436.099365234375px;
+    height: 60.94882583618164px;
+    position: absolute;
+    left: 768.9005737304688px;
+    top: 322.99993896484375px;
+}
+
+.e13_24 {
+    background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
+    width: 436.099365234375px;
+    height: 60.94882583618164px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.e28_3 {
+    color: rgba(163.62499594688416, 163.62499594688416, 163.62499594688416, 1);
+    width: 387.7606506347656px;
+    height: 36.77946472167969px;
+    position: absolute;
+    left: 13.660934448242188px;
+    top: 11.559231758117676px;
+    font-family: Noto Sans KR;
+    text-align: left;
+    font-size: 22px;
+    letter-spacing: 0;
+}
+
+.e28_5 {
+    width: 436.099365234375px;
+    height: 60.94882583618164px;
+    position: absolute;
+    left: 768.9005737304688px;
+    top: 624.591552734375px;
+}
+
+.e28_6 {
+    background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
+    width: 436.099365234375px;
+    height: 60.94882583618164px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.e28_14 {
+    color: rgba(163.62499594688416, 163.62499594688416, 163.62499594688416, 1);
+    width: 387.7606506347656px;
+    height: 36.77946472167969px;
+    position: absolute;
+    left: 14.711838722229004px;
+    top: 11.55929946899414px;
+    font-family: Noto Sans KR;
+    text-align: left;
+    font-size: 22px;
+    letter-spacing: 0;
+}
+
+.e28_8 {
+    width: 436.099365234375px;
+    height: 60.94882583618164px;
+    position: absolute;
+    left: 768.9005737304688px;
+    top: 517.40576171875px;
+}
+
+.e28_9 {
+    background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
+    width: 436.099365234375px;
+    height: 60.94882583618164px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.e28_10 {
+    color: rgba(163.62499594688416, 163.62499594688416, 163.62499594688416, 1);
+    width: 387.7606506347656px;
+    height: 36.77946472167969px;
+    position: absolute;
+    left: 13.660934448242188px;
+    top: 11.559173583984375px;
+    font-family: Noto Sans KR;
+    text-align: left;
+    font-size: 22px;
+    letter-spacing: 0;
+}
+
+.e28_11 {
+    color: rgba(9.000000413507223, 2.000000118277967, 98.00000175833702, 1);
+    width: 131.355224609375px;
+    height: 32.57609939575195px;
+    position: absolute;
+    left: 652px;
+    top: 335px;
+    font-family: 'Noto Sans CJK KR';
+    text-align: left;
+    font-size: 24px;
+    letter-spacing: 0;
+}
+
+.e28_12 {
+    color: rgba(9.000000413507223, 2.000000118277967, 98.00000175833702, 1);
+    width: 131.355224609375px;
+    height: 32.57609939575195px;
+    position: absolute;
+    left: 652px;
+    top: 443.99993896484375px;
+    font-family: 'Noto Sans CJK KR';
+    text-align: left;
+    font-size: 24px;
+    letter-spacing: 0;
+}
+
+.e28_13 {
+    color: rgba(9.000000413507223, 2.000000118277967, 98.00000175833702, 1);
+    width: 131.355224609375px;
+    height: 32.57609939575195px;
+    position: absolute;
+    left: 652px;
+    top: 638.9999389648438px;
+    font-family: 'Noto Sans CJK KR';
+    text-align: left;
+    font-size: 24px;
+    letter-spacing: 0;
+}
+
+.e28_15 {
+    width: 436.099365234375px;
+    height: 60.94882583618164px;
+    position: absolute;
+    left: 768.9005737304688px;
+    top: 720.2182006835938px;
+}
+
+.e28_16 {
+    background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
+    width: 436.099365234375px;
+    height: 60.94882583618164px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.e28_17 {
+    color: rgba(163.62499594688416, 163.62499594688416, 163.62499594688416, 1);
+    width: 387.7606506347656px;
+    height: 36.77946472167969px;
+    position: absolute;
+    left: 14.711838722229004px;
+    top: 11.559255599975586px;
+    font-family: Noto Sans KR;
+    text-align: left;
+    font-size: 22px;
+    letter-spacing: 0;
+}
+
+.e28_18 {
+    color: rgba(9.000000413507223, 2.000000118277967, 98.00000175833702, 1);
+    width: 131.355224609375px;
+    height: 32.57609939575195px;
+    position: absolute;
+    left: 652px;
+    top: 733.9999389648438px;
+    font-family: 'Noto Sans CJK KR';
+    text-align: left;
+    font-size: 24px;
+    letter-spacing: 0;
+}
+
+.e28_24 {
+    color: rgba(9.000000413507223, 2.000000118277967, 98.00000175833702, 1);
+    width: 298.6510314941406px;
+    height: 80.95014953613281px;
+    position: absolute;
+    left: 801px;
+    top: 117px;
+    font-family: 'Noto Sans CJK KR bold';
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 0;
+}
+
+#register-form>input[name="userName"] {
+    background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
+    width: 369px;
+    height: 45px;
+    position: absolute;
+    left: 778px;
+    top: 329.5px;
+    border-width: 0;
+    outline: none;
+    font-size: 26px;
+    font-family: 'Noto Sans CJK KR regular';
+}
+
+#register-form>input[name="userPassword"] {
+    background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
+    width: 369px;
+    height: 45px;
+    position: absolute;
+    left: 778px;
+    top: 436px;
+    border-width: 0;
+    outline: none;
+    font-size: 26px;
+    font-family: 'Noto Sans CJK KR regular';
+}
+
+#register-form>input[name="userPassword_check"] {
+    background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
+    width: 369px;
+    height: 45px;
+    position: absolute;
+    left: 778px;
+    top: 524px;
+    border-width: 0;
+    outline: none;
+    font-size: 26px;
+    font-family: 'Noto Sans CJK KR regular';
+}
+
+#register-form>input[name="user"] {
+    background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
+    width: 369px;
+    height: 45px;
+    position: absolute;
+    left: 778px;
+    top: 630px;
+    border-width: 0;
+    outline: none;
+    font-size: 26px;
+    font-family: 'Noto Sans CJK KR regular';
+}
+
+#register-form>input[name="email"] {
+    background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
+    width: 369px;
+    height: 45px;
+    position: absolute;
+    left: 778px;
+    top: 726.5px;
+    border-width: 0;
+    outline: none;
+    font-size: 26px;
+    font-family: 'Noto Sans CJK KR regular';
+}
+
+#register-form>input::placeholder {
+    color: rgba(163.62499594688416, 163.62499594688416, 163.62499594688416, 1);
+    font-size: 22px;
+    text-align: left;
+}
+
+#register-form>input[type="submit"] {
+    background-color: rgba(55.79890765249729, 49.05743859708309, 141.51171773672104, 1);
+    color: rgba(255, 255, 255, 1);
+    width: 204.34017944335938px;
+    height: 61.30205154418945px;
+    position: absolute;
+    left: 858px;
+    top: 856px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-family: 'Noto Sans CJK KR';
+    font-size: 26px;
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
