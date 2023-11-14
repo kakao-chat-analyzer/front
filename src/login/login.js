@@ -37,7 +37,7 @@ class App extends Component {
         
         <form method="post" action="localhost:8080/api/login" id="login-form">
           <input type="text" name="userId" placeholder="아이디"></input>
-          <input type="password" name="userPassword" placeholder="비밀번호"></input>
+          <input type="password" name="userPw" placeholder="비밀번호"></input>
           <button type="submit" id="submit" style={{ cursor: "pointer"}} >로그인</button>
           
         </form>

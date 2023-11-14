@@ -331,7 +331,7 @@
     font-family: 'Noto Sans CJK KR regular';
 }
 
-#register-form>input[name="userPassword"] {
+#register-form>input[name="userPd"] {
     background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
     width: 369px;
     height: 45px;
@@ -344,7 +344,7 @@
     font-family: 'Noto Sans CJK KR regular';
 }
 
-#register-form>input[name="userPassword_check"] {
+input[name="userPassword_check"] {
     background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
     width: 369px;
     height: 45px;
@@ -357,7 +357,7 @@
     font-family: 'Noto Sans CJK KR regular';
 }
 
-#register-form>input[name="user"] {
+#register-form>input[name="userName"] {
     background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
     width: 369px;
     height: 45px;
@@ -370,7 +370,7 @@
     font-family: 'Noto Sans CJK KR regular';
 }
 
-#register-form>input[name="email"] {
+#register-form>input[name="userEmail"] {
     background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
     width: 369px;
     height: 45px;
@@ -384,6 +384,12 @@
 }
 
 #register-form>input::placeholder {
+    color: rgba(163.62499594688416, 163.62499594688416, 163.62499594688416, 1);
+    font-size: 22px;
+    text-align: left;
+}
+
+input::placeholder { 
     color: rgba(163.62499594688416, 163.62499594688416, 163.62499594688416, 1);
     font-size: 22px;
     text-align: left;
