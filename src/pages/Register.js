@@ -1,8 +1,12 @@
-import './register.css';
+import '../styles/register.css';
 
 import React, { Component } from "react";
 
 // import { getResizeEventListener } from "../services/responsiveFrame";
+
+function handleClick() {
+    window.location.href = "/login"
+}
 
 class Register extends Component {
     render() {
@@ -10,9 +14,9 @@ class Register extends Component {
             <div id="App">
 
                 <div class="e13_19"></div>
-                <div class="e48_23"></div>
+                <div onClick={handleClick} style={{ cursor: "pointer" }} class="e48_23"></div>
                 <div class="e13_26">
-                    <div class="e13_27"></div><span class="e13_28">가입하기</span>
+                    <div class="e13_27"></div>{/* <span class="e13_28">가입하기</span> */}
                 </div>
                 <div class="e13_20">
                     <div class="e13_21"></div><span class="e28_4">비밀번호를 입력해주세요.</span>
@@ -32,7 +36,7 @@ class Register extends Component {
                 
                 <input type="password" name="userPassword_check" placeholder="비밀번호를 다시 한 번 입력해주세요."></input>
                 
-                <form method="post" action="localhost:8080/api/register" id="register-form">
+                <form method="post" action="/api/register" id="register-form">
                     <input type="text" name="userId" placeholder="아이디를 입력해주세요."></input>
                     <input type="password" name="userPd" placeholder="비밀번호를 입력해주세요."></input>
                     <input type="text" name="userName" placeholder="이름을 입력해주세요."></input>

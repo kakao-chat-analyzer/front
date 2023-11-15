@@ -1,6 +1,6 @@
 /* import logo from '../logo.svg'; */
 
-import './main.css';
+import '../styles/main.css';
 
 import React, { Component } from "react";
 

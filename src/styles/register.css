@@ -395,7 +395,7 @@ input::placeholder {
     text-align: left;
 }
 
-#register-form>input[type="submit"] {
+#register-form>button[type="submit"] {
     background-color: rgba(55.79890765249729, 49.05743859708309, 141.51171773672104, 1);
     color: rgba(255, 255, 255, 1);
     width: 204.34017944335938px;

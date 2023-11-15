@@ -1,18 +1,21 @@
 /* import logo from '../logo.svg'; */
 
-import './login.css';
+import '../styles/login.css';
 
 import React, { Component } from "react";
 
 // import { getResizeEventListener } from "../services/responsiveFrame";
 
+function handleClick() {
+  window.location.href = "/register"
+}
 class Login extends Component {
   render() {
     return (
 
       <div id="App">
         
-          <div className="e14_33"></div><a href = "회원가입 페이지" className="e14_57">회원가입</a>
+        <div className="e14_33"></div><u onClick={handleClick} style={{ cursor: "pointer" }} className="e14_57">회원가입</u>
 
           {/* <div className="e14_40">
 
@@ -35,7 +38,7 @@ class Login extends Component {
 
         <div className="e14_44"></div>
         
-        <form method="post" action="localhost:8080/api/login" id="login-form">
+        <form method="post" action="api/login" id="login-form">
           <input type="text" name="userId" placeholder="아이디"></input>
           <input type="password" name="userPw" placeholder="비밀번호"></input>
           <button type="submit" id="submit" style={{ cursor: "pointer"}} >로그인</button>
