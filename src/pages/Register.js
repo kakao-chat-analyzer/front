@@ -2,7 +2,7 @@ import './register.css';
 
 import React, { Component } from "react";
 
-import { getResizeEventListener } from "../services/responsiveFrame";
+// import { getResizeEventListener } from "../services/responsiveFrame";
 
 class Register extends Component {
     render() {
@@ -42,11 +42,11 @@ class Register extends Component {
             </div>
         );
     }
-    componentDidMount() {
-        const FixRatio = getResizeEventListener(1920, 1080);
-        window.onresize = FixRatio;
-        FixRatio();
-    }
+    // componentDidMount() {
+    //     const FixRatio = getResizeEventListener(1920, 1080);
+    //     window.onresize = FixRatio;
+    //     FixRatio();
+    // }
 }
 
 export default Register;
