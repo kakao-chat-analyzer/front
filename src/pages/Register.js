@@ -4,7 +4,7 @@ import React, { Component } from "react";
 
 import { getResizeEventListener } from "../services/responsiveFrame";
 
-class App extends Component {
+class Register extends Component {
     render() {
         return (
             <div id="App">
@@ -49,4 +49,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Register;

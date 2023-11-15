@@ -4,9 +4,9 @@ import './login.css';
 
 import React, { Component } from "react";
 
-import { getResizeEventListener } from "../services/responsiveFrame";
+// import { getResizeEventListener } from "../services/responsiveFrame";
 
-class App extends Component {
+class Login extends Component {
   render() {
     return (
 
@@ -48,11 +48,11 @@ class App extends Component {
 
   }
   
-  componentDidMount() {
-    const FixRatio = getResizeEventListener(1920, 1080);
-    window.onresize = FixRatio;
-    FixRatio();
-  }
+  // componentDidMount() {
+  //   const FixRatio = getResizeEventListener(1920, 1080);
+  //   window.onresize = FixRatio;
+  //   FixRatio();
+  // }
 }
 
-export default App;
+export default Login;
