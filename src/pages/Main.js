@@ -63,6 +63,8 @@ const Main = () => {
         setModalOpen(true);
     };
     
+    
+
     return (
         <div id="App">
             <div className="e42_2">
@@ -80,21 +82,29 @@ const Main = () => {
                     <div className="e58_4"></div>
                     <span className="e58_5">파일 업로드</span>
                 </div>
-                <div class="e58_7"></div>
-                <div class="e58_8"></div>
-                <div class="e58_9"></div>
-                <div class="e58_10"></div>
-                <div class="e58_11"></div>
-                <div class="e58_12"></div>
-                <div class="e58_13"></div>
-                <div class="e58_14"></div>
+
+                <form method="post" action="api/file" enctype="multipart/form-data">
+                    
+                    <label for="file" style={{ cursor: "pointer" }} >파일 업로드</label>
+                    <input type="file" id="file" accept=".txt"></input>
+                    <input type="submit"></input>
+                </form>
+                    
+
+                <div className="e58_7"></div>
+                <div className="e58_8"></div>
+                <div className="e58_9"></div>
+                <div className="e58_10"></div>
+                <div className="e58_11"></div>
+                <div className="e58_12"></div>
+                <div className="e58_13"></div>
+                <div className="e58_14"></div>
                 <div>
-                    <button onClick={showModal}>모달 띄우기</button>
+                    <button className="e" onClick={showModal}>모달 띄우기</button>
                     {modalOpen && <ModalBasic setModalOpen={setModalOpen} />}
                 </div>
             </div>
-
-            
+    
 
         </div>
 

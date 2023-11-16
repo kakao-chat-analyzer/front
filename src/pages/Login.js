@@ -41,8 +41,7 @@ class Login extends Component {
         <form method="post" action="api/login" id="login-form">
           <input type="text" name="userId" placeholder="아이디"></input>
           <input type="password" name="userPw" placeholder="비밀번호"></input>
-          <button type="submit" id="submit" style={{ cursor: "pointer"}} >로그인</button>
-          
+          <button type="submit" id="submit" style={{ cursor: "pointer" }} >로그인</button>
         </form>
         
       </div>
