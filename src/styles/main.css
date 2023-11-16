@@ -125,7 +125,7 @@
 }
 
 .e58_2 {
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     color: rgba(17.00000088661909, 17.00000088661909, 17.00000088661909, 1);
     width: 85.16999816894531px;
     height: 19px;
@@ -134,12 +134,12 @@
     top: 133px;
     font-family: 'Noto Sans CJK KR bold';
     text-align: center;
-    font-size: 15.625px;
+    font-size: 20px;
     letter-spacing: 2;
 }
 
 .e58_3 {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.30000001192092896);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.30000001192092896);
     width: 103.75px;
     height: 40px;
     position: absolute;
@@ -179,7 +179,7 @@
 }
 
 .e58_7 {
-    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
     background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
     width: 253px;
     height: 254px;
@@ -193,7 +193,7 @@
 }
 
 .e58_8 {
-    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
     background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
     width: 253px;
     height: 254px;
@@ -207,7 +207,7 @@
 }
 
 .e58_9 {
-    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
     background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
     width: 253px;
     height: 254px;
@@ -221,7 +221,7 @@
 }
 
 .e58_10 {
-    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
     background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
     width: 253px;
     height: 254px;
@@ -235,7 +235,7 @@
 }
 
 .e58_11 {
-    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
     background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
     width: 253px;
     height: 254px;
@@ -249,7 +249,7 @@
 }
 
 .e58_12 {
-    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
     background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
     width: 253px;
     height: 254px;
@@ -263,7 +263,7 @@
 }
 
 .e58_13 {
-    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
     background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
     width: 253px;
     height: 254px;
@@ -277,7 +277,7 @@
 }
 
 .e58_14 {
-    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
     background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
     width: 253px;
     height: 254px;
@@ -288,6 +288,21 @@
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+}
+
+.upload{
+    
+    background-color: rgba(56.000000461936, 49.00000087916851, 142.00000673532486, 1);
+    width: 103.75px;
+    height: 40px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
 }
 
 .App-header {

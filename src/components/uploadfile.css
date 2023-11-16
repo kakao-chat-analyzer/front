@@ -1,0 +1,45 @@
+.container {
+    background-color: rgba(0, 0, 0, 0.15000000596046448);
+    width: 1074px;
+    height: 705px;
+    position: absolute;
+    left: 423px;
+    top: 188px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+}
+.e233_11 {
+    width: 367px;
+    height: 337px;
+    position: absolute;
+    left: 351px;
+    top: 166px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-image: url(../images/upload.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.word {
+    color: rgba(0, 0, 0, 1);
+    width: 615px;
+    height: 105px;
+    position: absolute;
+    left: 229px;
+    top: 526px;
+    font-family: "Noto Sans KR bold";
+    text-align: center;
+    font-size: 48px;
+    letter-spacing: 0;
+}
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
