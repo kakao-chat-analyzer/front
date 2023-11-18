@@ -7,6 +7,8 @@ import Main from "./pages/Main";
 import { getResizeEventListener } from "./services/responsiveFrame";
 
 
+
+
 const App = () => {
   useEffect(() => {
     const FixRatio = getResizeEventListener(1920, 1080);

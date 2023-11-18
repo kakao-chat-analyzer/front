@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { Navigate } from 'react-router-dom';
 
+
+
 function handleClick() {
   window.location.href = "/register";
 }
@@ -13,13 +15,6 @@ const Login = () => {
 
   let user = useSelector((state) => { return state.user });
   const dispatch = useDispatch();
-
-  if (res.data.code === 200) {
-    console.log("로그인");
-    dispatch(loginUser(res.data.userInfo));
-    setMsg("");
-  }
-
 
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
@@ -51,7 +46,7 @@ const Login = () => {
         password
       };
 
-      axios.post("Endpoint", body)
+      axios.post("api/login", body)
         .then((res) => {
           console.log(res.data);
           if (res.data.code === 200) {
