@@ -54,6 +54,7 @@ import React from "react";
 import '../styles/main.css';
 import { useState } from 'react';
 import ModalBasic from '../components/Modal';
+import { useSelector, useDispatch } from "react-redux";
 
 const Main = () => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -63,6 +64,8 @@ const Main = () => {
         setModalOpen(true);
     };
     
+    const user = useSelector((state) => state.user);
+    const dispatch = useDispatch();
     
 
     return (
@@ -74,7 +77,7 @@ const Main = () => {
                 </div>
                 <span className="e42_10">카카오톡</span>
                 <span className="e42_11">추억 저장소</span>
-                <span className="e42_12">오승주 님</span>
+                <span className="e42_12">{user.name} 님</span>
                 <span className="e204_6">이용방법</span>
                 <div className="e54_2"></div>
                 <span className="e58_2">보관함</span>
