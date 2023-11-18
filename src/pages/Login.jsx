@@ -7,6 +7,7 @@ import { Navigate } from 'react-router-dom';
 
 
 
+
 function handleClick() {
   window.location.href = "/register";
 }
@@ -15,6 +16,8 @@ const Login = () => {
 
   let user = useSelector((state) => { return state.user });
   const dispatch = useDispatch();
+
+
 
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
@@ -42,26 +45,29 @@ const Login = () => {
 
     else {
       let body = {
-        id,
-        password
+        "userId":id,
+        "userPw":password
       };
-
-      axios.post("api/login", body)
+ 
+      axios.post("/api/login", null, {params: body})
         .then((res) => {
-          console.log(res.data);
-          if (res.data.code === 200) {
+          console.log(res.status);
+          if (res.status === 200) {
             console.log("로그인");
             dispatch(loginUser(res.data.userInfo));
-            setMsg("");
-            return <Navigate to="/login" />;
+            // setMsg("");
+            // navigate("/");
+            // return <Navigate to="/" />;
+            window.location.href = "/";
+            return 
           }
-          if (res.data.code === 400) {
+          else if (res.status === 400) {
             setMsg("ID, Password가 비어있습니다.");
           }
-          if (res.data.code === 401) {
+          else if(res.status === 401) {
             setMsg("존재하지 않는 ID입니다.");
           }
-          if (res.data.code === 402) {
+          else if (res.status === 402) {
             setMsg("Password가 틀립니다.");
           }
         });
@@ -86,7 +92,7 @@ const Login = () => {
 
       <div className="e14_44"></div>
 
-      <form method="post" action="api/login" id="login-form" onSubmit={LoginFunc}>
+      <form id="login-form" onSubmit={LoginFunc}>
         <input type="text" name="userId" placeholder="아이디" value={id} onChange={(e) => setId(e.target.value)} ></input>
         <input type="password" name="userPw" placeholder="비밀번호" value={password} onChange={(e) => setPassword(e.target.value)} ></input>
         <button type="submit" id="submit" style={{ cursor: "pointer" }} disabled={loading} >로그인</button>

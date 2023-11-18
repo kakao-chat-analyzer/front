@@ -38,7 +38,7 @@ class Register extends Component {
                 
                 <form method="post" action="/api/register" id="register-form">
                     <input type="text" name="userId" placeholder="아이디를 입력해주세요."></input>
-                    <input type="password" name="userPd" placeholder="비밀번호를 입력해주세요."></input>
+                    <input type="password" name="userPw" placeholder="비밀번호를 입력해주세요."></input>
                     <input type="text" name="userName" placeholder="이름을 입력해주세요."></input>
                     <input type="text" name="userEmail" placeholder="이메일을 입력해주세요."></input>
                     <button type="submit" id="submit" style={{ cursor: "pointer" }} >가입하기</button>
