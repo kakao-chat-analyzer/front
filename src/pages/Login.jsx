@@ -59,7 +59,7 @@ const Login = () => {
             // navigate("/");
             // return <Navigate to="/" />;
             window.location.href = "/";
-            return 
+            
           }
           else if (res.status === 400) {
             setMsg("ID, Password가 비어있습니다.");

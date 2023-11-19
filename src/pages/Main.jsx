@@ -77,20 +77,16 @@ const Main = () => {
                 </div>
                 <span className="e42_10">카카오톡</span>
                 <span className="e42_11">추억 저장소</span>
-                <span className="e42_12">{user.name} 님</span>
+                <span className="e42_12">오승주 님</span>
                 <span className="e204_6">이용방법</span>
                 <div className="e54_2"></div>
                 <span className="e58_2">보관함</span>
-                <div className="e58_3">
-                    <div className="e58_4"></div>
-                    <span className="e58_5">파일 업로드</span>
-                </div>
-
+                
                 <form method="post" action="api/file" enctype="multipart/form-data">
                     
-                    <label for="file" style={{ cursor: "pointer" }} >파일 업로드</label>
+                    <label for="file" style={{ cursor: "pointer" }} >파일 선택</label>
                     <input type="file" id="file" accept=".txt"></input>
-                    <input type="submit"></input>
+                    <button type="submit" className="sub" style={{ cursor: "pointer" }} >파일 업로드</button>
                 </form>
                     
 

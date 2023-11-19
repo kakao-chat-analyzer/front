@@ -331,7 +331,7 @@
     font-family: 'Noto Sans CJK KR regular';
 }
 
-#register-form>input[name="userPd"] {
+#register-form>input[name="userPw"] {
     background-color: rgba(241.43983483314514, 241.43983483314514, 241.43983483314514, 1);
     width: 369px;
     height: 45px;
@@ -410,6 +410,40 @@ input::placeholder {
     font-family: 'Noto Sans CJK KR';
     font-size: 26px;
 }
+
+.checktrue_confirmPwd{
+    position: absolute;
+    background-image: url(../images/check.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    left: 1225px;
+    top: 532px;
+}
+
+.checktrue_email {
+    position: absolute;
+    background-image: url(../images/check.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    left: 1225px;
+    top: 735px;
+}
+
+.checktrue_nickname {
+    position: absolute;
+    background-image: url(../images/check.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    left: 1225px;
+    top: 635px;
+}
+
 
 .App-header {
     background-color: #282c34;
