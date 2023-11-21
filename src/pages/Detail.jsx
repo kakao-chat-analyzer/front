@@ -1,13 +1,9 @@
 import React, { useState, useRef } from 'react';
-// import { getResizeEventListener } from "../services/responsiveFrame";
 import '../styles/detail.css';
 
-/* import { LeftArrow, RightArrow } from './Arrow'; */
-
-
-
-
-
+function buttonClick() {
+   window.location.href = "/";
+}
 
 const Detail = () => {
 
@@ -86,17 +82,16 @@ const Detail = () => {
 
    return (
       <div id="App" >
-
+         
          <div className="e272_2" >
-
+            
             <div class="e272_3"></div>
-
+            
             <div class="e272_39"></div>
             <div class="e272_4">
-               <div class="e272_5"></div>
+               <div class="e272_5" onClick={buttonClick} style={{ cursor: "pointer" }}></div>
             </div>
             <div
-
                onMouseDown={(e) => handleScroll(e, 'start')}
                onMouseUp={(e) => handleScroll(e, 'end')}
                onMouseLeave={(e) => handleScroll(e, 'leave')}
@@ -110,15 +105,15 @@ const Detail = () => {
                {Data.map(({ class: className }, index) => (
                   <div key={index} className={className} ></div>
                ))}</div>
+            
                <span className="e42_10">카카오톡</span>
                <span className="e42_11">추억 저장소</span>
                <span className="e42_12">오승주님</span>
                <span className="e204_6">이용방법</span>
                <div className="e54_2"></div>
                <div class="e272_48"></div>
-
             
-
+                  
 
          </div>
       </div>

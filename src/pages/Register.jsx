@@ -1,11 +1,19 @@
 import '../styles/register.css';
 import React, { useState, useCallback } from "react";
+import ModalBasic from '../components/Modal';
 
 function handleClick() {
     window.location.href = "/login";
 }
 
 const Register = () => {
+
+    const [modalOpen, setModalOpen] = useState(false);
+
+    // 모달창 노출
+    const showModal = () => {
+        setModalOpen(true);
+    };
 
     const [id, setId] = useState("");
     const [email, setEmail] = useState("");
@@ -149,7 +157,7 @@ const Register = () => {
                 <input type="password" name="userPw" placeholder="비밀번호를 입력해주세요." value={password} onChange={onChangePwd} ></input>
                 <input type="text" name="userName" placeholder="이름을 입력해주세요." value={nickname} onChange={onChangeNickname}></input> 
                 <input type="text" name="userEmail" placeholder="이메일을 입력해주세요." value={email} onChange={onChangeEmail}></input>
-                <button type="submit" id="submit" style={{ cursor: "pointer" }} disabled={!isAllValid} >가입하기</button>
+                <button type="submit" id="submit" style={{ cursor: "pointer" }} disabled={!isAllValid} onClick={showModal}>가입하기</button>
             </form>
         </div>
     );

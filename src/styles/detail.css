@@ -26,7 +26,7 @@
 }
 
 .e272_3 {
-   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.25);
+   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
    background-color: rgba(253.0000001192093, 222.00000196695328, 69.00000348687172, 1);
    width: 1566px;
    height: 893px;
@@ -141,8 +141,8 @@
    width: 50px;
    height: 50px;
    position: absolute;
-   left: 20px;
-   top: 20px;
+   /* left: 20px;
+   top: 20px; */
    /* background-image: url(images/header___heading_1___link___logo_webp.png); */
    background-repeat: no-repeat;
    background-size: cover;
@@ -229,13 +229,6 @@
    background-repeat: no-repeat;
    background-size: cover;
 }
-
-.scrollable-div {
-   
-   
-}
-
-
 
 
 
