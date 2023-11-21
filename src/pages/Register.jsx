@@ -10,22 +10,22 @@ function handleClick() {
 }
 
 const Register = () => {
-    
+
     let user = useSelector((state) => { return state.user });
     const dispatch = useDispatch();
 
     const [loading, setLoading] = useState(false);
     const [msg, setMsg] = useState("");
 
-    
-
-    
-
-    
 
 
 
-    
+
+
+
+
+
+
 
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -64,9 +64,15 @@ const Register = () => {
             .match(/^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|].$/)
     }
 
+    const validateId = (id) => {
+        return id
+            .toLowerCase()
+            .match(/^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).*$/);
+    }
+
 
     // 1-1에 잡아뒀던 유효성 검사 함수로 정리하기
-    /* const isIdValid = validateId(id); */
+    const isIdValid = validateId(id);
     const isEmailValid = validateEmail(email);
     const isPwdValid = validatePwd(password);
     const isConfirmPwd = password === confirmPwd;
@@ -80,17 +86,11 @@ const Register = () => {
         setEmailMsg(currEmail !== "");
     })
 
-    /* const onChangeId = useCallback(async (e) => {
+    const onChangeId = useCallback((e) => {
         const currId = e.target.value;
-        setEmail(currId);
+        setId(currId);
 
-        if (!validateId(currId)) {
-            setIdMsg(false)
-        } else {
-            setIdMsg(true)
-        }
-
-    }) */
+    }, [])
 
     const onChangePwd = useCallback((e) => {
         const currPwd = e.target.value;
@@ -128,14 +128,15 @@ const Register = () => {
                 "userId": id,
                 "userPw": password,
                 "userEmail": email,
-                "userName" : nickname
+                "userName": nickname
             };
-
+            console.log(body)
             axios.post("/api/register", null, { params: body })
                 .then((res) => {
+                    console.log(res)
                     console.log(res.status);
                     if (res.status === 200) {
-                        console.log("회원가입완료");
+                        console.log("회원가입 완료");
                         dispatch(loginUser(res.data.userInfo));
                         // setMsg("");
                         // navigate("/");
@@ -145,16 +146,12 @@ const Register = () => {
                     else if (res.status === 401) {
                         setMsg("다시 입력해주세요.");
                     }
-                    
+
                 });
         }
         setLoading(true);
 
     }
-
-
-
-
 
 
     return (
@@ -208,9 +205,9 @@ const Register = () => {
             }
 
             <form onSubmit={RegisterFunc} id="register-form">
-                <input type="text" name="userId" placeholder="아이디를 입력해주세요." /* value={id} onChange={onChangeId} */></input>
+                <input type="text" name="userId" placeholder="아이디를 입력해주세요." value={id} onChange={onChangeId}></input>
                 <input type="password" name="userPw" placeholder="비밀번호를 입력해주세요." value={password} onChange={onChangePwd} ></input>
-                <input type="text" name="userName" placeholder="이름을 입력해주세요." value={nickname} onChange={onChangeNickname}></input> 
+                <input type="text" name="userName" placeholder="이름을 입력해주세요." value={nickname} onChange={onChangeNickname}></input>
                 <input type="text" name="userEmail" placeholder="이메일을 입력해주세요." value={email} onChange={onChangeEmail}></input>
                 <button type="submit" id="submit" style={{ cursor: "pointer" }} disabled={!isAllValid} onClick={showModal}>가입하기</button>
             </form>

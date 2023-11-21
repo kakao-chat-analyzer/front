@@ -5,6 +5,10 @@ function buttonClick() {
    window.location.href = "/";
 }
 
+function introductionClick() {
+   window.location.href = "/introduction";
+}
+
 const Detail = () => {
 
     const [isScroll, setIsScroll] = useState(false);
@@ -109,7 +113,7 @@ const Detail = () => {
                <span className="e42__">카카오톡</span>
                <span className="e42_3">추억 저장소</span>
                <span className="e42_12">오승주님</span>
-               <span className="e204_6">이용방법</span>
+               <span onClick={introductionClick} style={{ cursor: "pointer" }} className="e204_6">이용방법</span>
                <div className="e54_2"></div>
                <div class="e272_48"></div>
             
