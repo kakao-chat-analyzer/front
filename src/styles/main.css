@@ -25,7 +25,7 @@
 }
 
 .e58_6 {
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
     background-color: rgba(253.0000001192093, 222.00000196695328, 69.00000348687172, 1);
     width: 1566px;
     height: 893px;
@@ -92,13 +92,14 @@
     width: 138.17710876464844px;
     height: 24px;
     position: absolute;
-    left: 1694px;
-    top: 32px;
+    left: 1690px;
+    top: 30px;
     font-family: 'Noto Sans CJK KR bold';
     text-align: center;
     font-size: 20px;
     letter-spacing: -1.2999999523162842;
     line-height: px;
+    letter-spacing: -1px
 }
 
 .e204_6 {
@@ -107,7 +108,7 @@
     height: 24px;
     position: absolute;
     left: 1574px;
-    top: 32px;
+    top: 30px;
     font-family: 'Noto Sans CJK KR bold';
     text-align: center;
     font-size: 20px;
@@ -324,7 +325,7 @@ label{
     text-align: center;
     font-size: 17px;
     color: rgba(255, 255, 255, 1);
-    line-height: 40px;
+    line-height: 42px;
 }
 
 input[type="file"] {

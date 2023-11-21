@@ -7,6 +7,9 @@ import { Navigate } from 'react-router-dom';
 
 
 
+function buttonClick() {
+  window.location.href = "/";
+}
 
 function handleClick() {
   window.location.href = "/register";
@@ -25,14 +28,14 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState("");
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (msg) {
       setTimeout(() => {
         setMsg("");
         setLoading(false);
       }, 1500);
     }
-  }, [msg])
+  }, [msg]) */
 
   const LoginFunc = (e) => {
     e.preventDefault();
@@ -80,6 +83,7 @@ const Login = () => {
     <div id="App">
       <div className="e14_33"></div>
       <u onClick={handleClick} style={{ cursor: "pointer" }} className="e14_57">회원가입</u>
+      
 
       <div className="e14_34">
         <div className="e14_35"></div>
@@ -90,7 +94,7 @@ const Login = () => {
       </div>
       <span className="e14_43">카카오톡 추억 저장소</span>
 
-      <div className="e14_44"></div>
+      <div onClick={buttonClick} style={{ cursor: "pointer" }} className="e14_44"></div>
 
       <form id="login-form" onSubmit={LoginFunc}>
         <input type="text" name="userId" placeholder="아이디" value={id} onChange={(e) => setId(e.target.value)} ></input>

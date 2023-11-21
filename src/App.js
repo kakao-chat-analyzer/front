@@ -4,6 +4,7 @@ import "./index.css"
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Main from "./pages/Main";
+import Detail from './pages/Detail';
 import { getResizeEventListener } from "./services/responsiveFrame";
 
 
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/detail" element={<Detail />} />
       </Routes>
     </Router>
   );

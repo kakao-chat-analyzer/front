@@ -1,0 +1,256 @@
+.App {
+   text-align: center;
+}
+
+.App-logo {
+   height: 40vmin;
+   pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+   .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+   }
+}
+
+
+.e272_2 {
+   overflow: hidden;
+}
+
+.e272_2 {
+   background-color: rgba(186.0000041127205, 206.0000029206276, 224.000001847744, 1);
+   width: 1920px;
+   height: 1080px;
+   position: absolute;
+}
+
+.e272_3 {
+   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.25);
+   background-color: rgba(253.0000001192093, 222.00000196695328, 69.00000348687172, 1);
+   width: 1566px;
+   height: 893px;
+   position: absolute;
+   left: 177px;
+   top: 93px;
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+   border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+}
+
+.e271_2 {
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+   background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
+   width: 338px;
+   height: 584px;
+   position: absolute;
+   left: 980px;
+   top: 275px;
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+   border-bottom-right-radius: 15px;
+}
+
+.e357_2 {
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+   background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
+   width: 338px;
+   height: 584px;
+   position: absolute;
+   left: 1359px;
+   top: 275px;
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+   border-bottom-right-radius: 15px;
+}
+
+.e271_3 {
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+   background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
+   width: 338px;
+   height: 584px;
+   position: absolute;
+   left: 601px;
+   top: 275px;
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+   border-bottom-right-radius: 15px;
+}
+
+.e271_4 {
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+   background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
+   width: 338px;
+   height: 584px;
+   position: absolute;
+   left: 222px;
+   top: 275px;
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+   border-bottom-right-radius: 15px;
+}
+
+.e271_5 {
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+   background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
+   width: 338px;
+   height: 584px;
+   position: absolute;
+   left: 1738px;
+   top: 275px;
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+   border-bottom-right-radius: 15px;
+}
+
+.e271_6 {
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+   background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
+   width: 338px;
+   height: 584px;
+   position: absolute;
+   left: 2117px;
+   top: 275px;
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+   border-bottom-right-radius: 15px;
+}
+
+.e272_39 {
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   background-color: rgba(245.00000059604645, 245.00000059604645, 245.00000059604645, 1);
+   width: 1466px;
+   height: 20px;
+   position: absolute;
+   left: 227px;
+   top: 132px;
+   border-top-left-radius: 40px;
+   border-top-right-radius: 40px;
+   border-bottom-left-radius: 40px;
+   border-bottom-right-radius: 40px;
+}
+
+.e272_4 {
+   width: 50px;
+   height: 50px;
+   position: absolute;
+   left: 20px;
+   top: 20px;
+   /* background-image: url(images/header___heading_1___link___logo_webp.png); */
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.e272_5 {
+   width: 50px;
+   height: 50px;
+   position: absolute;
+   left: 0px;
+   top: 0px;
+   background-image: url(../images/image_1.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.e42_10 {
+   color: rgba(0, 0, 0, 1);
+   width: 88.47615051269531px;
+   height: 19px;
+   position: absolute;
+   left: 81px;
+   top: 25.25px;
+   font-family: 'Noto Sans CJK KR bold';
+   text-align: left;
+   font-size: 16px;
+   letter-spacing: 0;
+   line-height: px;
+   letter-spacing: -1px
+}
+
+.e42_11 {
+   color: rgba(0, 0, 0, 1);
+   width: 195.1313934326172px;
+   height: 19px;
+   position: absolute;
+   left: 81px;
+   top: 48.1300048828125px;
+   font-family: 'Noto Sans CJK KR bold';
+   text-align: left;
+   font-size: 16px;
+   letter-spacing: 0;
+   line-height: px;
+   letter-spacing: -1px
+}
+
+.e42_12 {
+   color: rgba(36.00000165402889, 41.00000135600567, 47.0000009983778, 1);
+   width: 138.17710876464844px;
+   height: 24px;
+   position: absolute;
+   left: 1690px;
+   top: 30px;
+   font-family: 'Noto Sans CJK KR bold';
+   text-align: center;
+   font-size: 20px;
+   letter-spacing: -1.2999999523162842;
+   line-height: px;
+   letter-spacing: -1px
+}
+
+.e204_6 {
+   color: rgba(36.00000165402889, 41.00000135600567, 47.0000009983778, 1);
+   width: 138.17710876464844px;
+   height: 24px;
+   position: absolute;
+   left: 1574px;
+   top: 30px;
+   font-family: 'Noto Sans CJK KR bold';
+   text-align: center;
+   font-size: 20px;
+   letter-spacing: -1.2999999523162842;
+   line-height: px;
+   letter-spacing: -1px
+}
+
+.e54_2 {
+   width: 56px;
+   height: 56px;
+   position: absolute;
+   left: 1812px;
+   top: 18px;
+   background-image: url(../images/image_2.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.App-header {
+   background-color: #282c34;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   font-size: calc(10px + 2vmin);
+   color: white;
+}
+
+.App-link {
+   color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+   from {
+      transform: rotate(0deg);
+   }
+
+   to {
+      transform: rotate(360deg);
+   }
+}

@@ -45,7 +45,7 @@ const Register = () => {
     const isConfirmPwd = password === confirmPwd;
     const isNicknameValid = validateNickname(nickname);
 
-    
+
     const onChangeEmail = useCallback(async (e) => {
         const currEmail = e.target.value;
         setEmail(currEmail);
@@ -64,7 +64,7 @@ const Register = () => {
         }
 
     }) */
-    
+
     const onChangePwd = useCallback((e) => {
         const currPwd = e.target.value;
         setPassword(currPwd);
@@ -76,22 +76,22 @@ const Register = () => {
 
         if (currConfirmPwd !== password) {
             setConfirmPwdMsg(false)
-            
+
         } else {
             setConfirmPwdMsg(true)
-            
+
         }
     }, [password])
 
-    
+
 
     const onChangeNickname = useCallback((e) => {
-      const currNickname = e.target.value;
-      setNickname(currNickname);
-      setNicknameMsg(currNickname !== "");
+        const currNickname = e.target.value;
+        setNickname(currNickname);
+        setNicknameMsg(currNickname !== "");
     }, []);
 
-    const isAllValid =isConfirmPwd;
+    const isAllValid = isConfirmPwd;
 
 
     return (

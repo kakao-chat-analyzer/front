@@ -389,7 +389,7 @@ input[name="userPassword_check"] {
     text-align: left;
 }
 
-input::placeholder { 
+input::placeholder {
     color: rgba(163.62499594688416, 163.62499594688416, 163.62499594688416, 1);
     font-size: 22px;
     text-align: left;
@@ -411,7 +411,7 @@ input::placeholder {
     font-size: 26px;
 }
 
-.checktrue_confirmPwd{
+.checktrue_confirmPwd {
     position: absolute;
     background-image: url(../images/check.png);
     background-repeat: no-repeat;
