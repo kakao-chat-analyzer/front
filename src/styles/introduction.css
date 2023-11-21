@@ -150,8 +150,8 @@ border: 3px solid rgba(9.000000413507223, 2.000000118277967, 98.00000175833702, 
    width: 344px;
    height: 252px;
    position: absolute;
-   left: 458px;
-   top: 380px;
+   left: 435px;
+   top: 340px;
    font-family: 'Noto Sans KR bold';
    font-weight: 1000;
    text-align: left;
@@ -220,31 +220,31 @@ border: 3px solid rgba(9.000000413507223, 2.000000118277967, 98.00000175833702, 
 
 
 
-.e42_10 {
+.e42_q{
    color: rgba(0, 0, 0, 1);
    width: 88.47615051269531px;
    height: 19px;
    position: absolute;
    left: 81px;
-   top: 25.25px;
+   top: 20px;
    font-family: 'Noto Sans CJK KR bold';
    text-align: left;
-   font-size: 16px;
+   font-size: 17px;
    letter-spacing: 0;
    line-height: px;
    letter-spacing: -1px
 }
 
-.e42_11 {
+.e42_w {
    color: rgba(0, 0, 0, 1);
    width: 195.1313934326172px;
    height: 19px;
    position: absolute;
    left: 81px;
-   top: 48.1300048828125px;
+   top: 44px;
    font-family: 'Noto Sans CJK KR bold';
    text-align: left;
-   font-size: 16px;
+   font-size: 17px;
    letter-spacing: 0;
    line-height: px;
    letter-spacing: -1px

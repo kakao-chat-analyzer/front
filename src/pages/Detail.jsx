@@ -106,8 +106,8 @@ const Detail = () => {
                   <div key={index} className={className} ></div>
                ))}</div>
             
-               <span className="e42_10">카카오톡</span>
-               <span className="e42_11">추억 저장소</span>
+               <span className="e42__">카카오톡</span>
+               <span className="e42_3">추억 저장소</span>
                <span className="e42_12">오승주님</span>
                <span className="e204_6">이용방법</span>
                <div className="e54_2"></div>

@@ -30,8 +30,8 @@ const Introduction = () => {
             </div>
             
             <div class="e381_5"></div>
-            <span className="e42_10">카카오톡</span>
-            <span className="e42_11">추억 저장소</span>
+            <span className="e42_q">카카오톡</span>
+            <span className="e42_w">추억 저장소</span>
             <span className="e42_12">오승주님</span>
             <span className="e204_6">이용방법</span>
             <div className="e54_2"></div>

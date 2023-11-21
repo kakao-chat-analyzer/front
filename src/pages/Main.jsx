@@ -5,6 +5,12 @@ import { useState, useEffect } from 'react';
 import ModalBasic from '../components/Modal';
 import { useSelector, useDispatch } from "react-redux";
 
+
+function buttonClick() {
+    window.location.href = "/login";
+}
+
+
 const Main = () => {
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -44,11 +50,11 @@ const Main = () => {
                 <div className="e42_9">
                     <div className="e42_21"></div>
                 </div>
-                <span className="e42_10">카카오톡</span>
-                <span className="e42_11">추억 저장소</span>
+                <span className="e42_1">카카오톡</span>
+                <span className="e42_">추억 저장소</span>
                 <span className="e42_12">{renderUserName}</span>
                 <span className="e204_6">이용방법</span>
-                <div className="e54_2"></div>
+                <div onClick={userName ? null : buttonClick} style={{ cursor: "pointer" }} className="e54_2"></div>
                 <span className="e58_2">보관함</span>
                 
                 <form method="post" action="api/file" enctype="multipart/form-data">
