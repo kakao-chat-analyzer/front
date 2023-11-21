@@ -97,7 +97,7 @@ const Register = () => {
     return (
         <div id="App">
             <div className="e13_19"></div>
-            <div onClick={handleClick} style={{ cursor: "pointer" }} className="e48_23"></div>
+            <div onClick={handleClick} style={{ cursor: "pointer" }} className="e48_22"></div>
             <div className="e13_26">
                 <div className="e13_27"></div>
             </div>
@@ -147,7 +147,7 @@ const Register = () => {
             <form method="post" action="/api/register" id="register-form">
                 <input type="text" name="userId" placeholder="아이디를 입력해주세요." /* value={id} onChange={onChangeId} */></input>
                 <input type="password" name="userPw" placeholder="비밀번호를 입력해주세요." value={password} onChange={onChangePwd} ></input>
-                <input type="text" name="userName" placeholder="이름을 입력해주세요." value={nickname} onChange={onChangeNickname}></input>
+                <input type="text" name="userName" placeholder="이름을 입력해주세요." value={nickname} onChange={onChangeNickname}></input> 
                 <input type="text" name="userEmail" placeholder="이메일을 입력해주세요." value={email} onChange={onChangeEmail}></input>
                 <button type="submit" id="submit" style={{ cursor: "pointer" }} disabled={!isAllValid} >가입하기</button>
             </form>

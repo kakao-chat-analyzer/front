@@ -13,7 +13,7 @@ const Arrow = ({ disabled, onClick, children }) => (
 
 
 const Detail = () => {
-   
+
    const [selected, setSelected] = useState([]); // State to manage selected items
 
    // Handle click event on each item
@@ -69,13 +69,13 @@ const Detail = () => {
       <div id="App">
          <div class="e272_2">
             <div class="e272_3"></div>
-            
-               <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-                  {Data.map(({ class: className }, index) => (
-                     <div key={index} className={className}></div>
-                  ))}
-               </ScrollMenu>
-            
+
+            <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+               {Data.map(({ class: className }, index) => (
+                  <div key={index} className={className}></div>
+               ))}
+            </ScrollMenu>
+
             <div class="e272_39"></div>
             <div class="e272_4">
                <div class="e272_5"></div>
@@ -85,7 +85,7 @@ const Detail = () => {
             <span className="e42_12">오승주님</span>
             <span className="e204_6">이용방법</span>
             <div className="e54_2"></div>
-            <div class="e272_48"></div> 
+            <div class="e272_48"></div>
          </div>
       </div>
    );
