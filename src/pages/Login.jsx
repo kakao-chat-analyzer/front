@@ -28,15 +28,6 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState("");
 
-  /* useEffect(() => {
-    if (msg) {
-      setTimeout(() => {
-        setMsg("");
-        setLoading(false);
-      }, 1500);
-    }
-  }, [msg]) */
-
   const LoginFunc = (e) => {
     e.preventDefault();
     if (!id) {

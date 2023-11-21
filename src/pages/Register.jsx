@@ -1,5 +1,8 @@
 import '../styles/register.css';
 import React, { useState, useCallback } from "react";
+import { loginUser } from "../userSlice";
+import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
 import ModalBasic from '../components/Modal';
 
 function handleClick() {
@@ -7,6 +10,22 @@ function handleClick() {
 }
 
 const Register = () => {
+    
+    let user = useSelector((state) => { return state.user });
+    const dispatch = useDispatch();
+
+    const [loading, setLoading] = useState(false);
+    const [msg, setMsg] = useState("");
+
+    
+
+    
+
+    
+
+
+
+    
 
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -102,6 +121,42 @@ const Register = () => {
     const isAllValid = isConfirmPwd;
 
 
+    const RegisterFunc = (e) => {
+        e.preventDefault();
+        {
+            let body = {
+                "userId": id,
+                "userPw": password,
+                "userEmail": email,
+                "userName" : nickname
+            };
+
+            axios.post("/api/register", null, { params: body })
+                .then((res) => {
+                    console.log(res.status);
+                    if (res.status === 200) {
+                        console.log("회원가입완료");
+                        dispatch(loginUser(res.data.userInfo));
+                        // setMsg("");
+                        // navigate("/");
+                        // return <Navigate to="/" />;
+                        window.location.href = "/login";
+                    }
+                    else if (res.status === 401) {
+                        setMsg("다시 입력해주세요.");
+                    }
+                    
+                });
+        }
+        setLoading(true);
+
+    }
+
+
+
+
+
+
     return (
         <div id="App">
             <div className="e13_19"></div>
@@ -152,7 +207,7 @@ const Register = () => {
                     : <div></div>
             }
 
-            <form method="post" action="/api/register" id="register-form">
+            <form onSubmit={RegisterFunc} id="register-form">
                 <input type="text" name="userId" placeholder="아이디를 입력해주세요." /* value={id} onChange={onChangeId} */></input>
                 <input type="password" name="userPw" placeholder="비밀번호를 입력해주세요." value={password} onChange={onChangePwd} ></input>
                 <input type="text" name="userName" placeholder="이름을 입력해주세요." value={nickname} onChange={onChangeNickname}></input> 
