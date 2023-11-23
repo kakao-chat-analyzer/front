@@ -37,8 +37,9 @@ const Main = () => {
         }
     };
 
-    const handleButtonClick = () => {
-        if (!userName) {
+    const handleButtonClick = (event) => {
+        if (!userName)
+            event.preventDefault(); {
             buttonClick();
         }
     };
@@ -73,7 +74,7 @@ const Main = () => {
         fetchData();
     }, []);
 
-    const renderUserName = userName ? userName + "님" : "로그인하기";
+    const renderUserName = userName ? userName + " 님" : "로그인하기";
 
 
     const handleDetailClick = async () => {
@@ -81,12 +82,12 @@ const Main = () => {
             const response = await fetch('/api/user');
             let data = await response.json();
             // data형식은 이렇다는 가정으로..
-            /* data = {
+            data = {
                 "userName": "GOGO",
                 "chat_room": [{ "room_number": 1 },
                 { "room_number": 2 },
                 { "room_number": 3 }]
-            } */
+            }
             if (data.chat_room.some(room => room.room_number === 1)) {
                 window.location.href = "/detail";
             }
@@ -107,7 +108,7 @@ const Main = () => {
                 </div>
                 <span className="e42_1">카카오톡</span>
                 <span className="e42_">추억 저장소</span>
-                <span className="e42_12">{renderUserName}</span>
+                <span onClick={userName ? null : buttonClick} style={userName ? null : { cursor: "pointer" }} className="e42_12" >{renderUserName}</span>
                 <span onClick={introductionClick} style={{ cursor: "pointer" }} className="e204_6">이용방법</span>
                 <div onClick={userName ? null : buttonClick} style={{ cursor: "pointer" }} className="e54_2"></div>
                 <span className="e58_2">보관함</span>
