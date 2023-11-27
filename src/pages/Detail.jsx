@@ -1,25 +1,25 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import '../styles/detail.css';
 
 function buttonClick() {
-   window.location.href = "/";
+   window.location.href = "/login";
 }
 
 function introductionClick() {
    window.location.href = "/introduction";
 }
 
+function logoClick() {
+   window.location.href = "/";
+}
+
 const Detail = () => {
 
-    const [isScroll, setIsScroll] = useState(false);
-    const [originX, setOriginX] = useState(0);
-    const [afterX, setAfterX] = useState(0);
-    const [position, setPosition] = useState(0);
+   const [isScroll, setIsScroll] = useState(false);
+   const [originX, setOriginX] = useState(0);
+   const [afterX, setAfterX] = useState(0);
+   const [position, setPosition] = useState(0);
 
-   /* const [isScrolling, setIsScrolling] = useState(false);
-   const [startX, setStartX] = useState(0);
-   const [scrollLeft, setScrollLeft] = useState(0);
-   const containerRef = useRef(null); */
 
    const Data = [
       { class: "e271_2" },
@@ -63,26 +63,24 @@ const Detail = () => {
       }
    };
 
-   /* const handleMouseDown = (e) => {
-      setIsScrolling(true);
-      setStartX(e.pageX - containerRef.current.offsetLeft);
-      setScrollLeft(containerRef.current.scrollLeft);
+   const [userName, setUserName] = useState("");
 
-   };
+   useEffect(() => {
+      const fetchData = async () => {
+         try {
+            const response = await fetch('/api/user');
+            const body = await response.json();
+            setUserName(body.userName);
+         } catch (error) {
+            console.error('Error fetching data:', error);
+         }
+      };
 
-   const handleMouseUp = () => {
-      setIsScrolling(false);
-   };
+      fetchData();
+   }, []);
 
-   const handleMouseMove = (e) => {
-      if (!isScrolling) return;
-      e.preventDefault();
-      const x = e.pageX - containerRef.current.offsetLeft;
-      const distance = x - startX;
-      
-      containerRef.current.scrollLeft = scrollLeft - distance; // Change '+' to '-' to move in the opposite direction of the mouse
-      
-   }; */
+   const renderUserName = userName ? userName + " 님" : "로그인하기";
+
 
    return (
       <div id="App" >
@@ -93,7 +91,7 @@ const Detail = () => {
             
             <div class="e272_39"></div>
             <div class="e272_4">
-               <div class="e272_5" onClick={buttonClick} style={{ cursor: "pointer" }}></div>
+               <div class="e272_5" onClick={logoClick} style={{ cursor: "pointer" }}></div>
             </div>
             <div
                onMouseDown={(e) => handleScroll(e, 'start')}
@@ -112,13 +110,11 @@ const Detail = () => {
             
                <span className="e42__">카카오톡</span>
                <span className="e42_3">추억 저장소</span>
-               <span className="e42_12">오승주님</span>
+               <span onClick={userName ? null : buttonClick} style={userName ? null : { cursor: "pointer" }} className="e42_12">{renderUserName}</span>
                <span onClick={introductionClick} style={{ cursor: "pointer" }} className="e204_6">이용방법</span>
                <div className="e54_2"></div>
                <div class="e272_48"></div>
             
-                  
-
          </div>
       </div>
 

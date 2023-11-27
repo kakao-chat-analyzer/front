@@ -21,15 +21,14 @@ const Main = () => {
 
     const navigate = useNavigate();
 
+    const [userName, setUserName] = useState("");
+
     // 모달창 노출
     const showModal = () => {
         setModalOpen(true);
     };
 
-    /* const user = useSelector((state) => state.user);
-    const dispatch = useDispatch(); */
-
-    const [userName, setUserName] = useState("");
+    
 
     const handleFileInputChange = () => {
         if (!userName) {
