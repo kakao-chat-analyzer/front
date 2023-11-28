@@ -1,9 +1,11 @@
 import React from "react";
 import '../styles/main.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import ModalBasic from '../components/Modal';
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
+import axios, { post } from "axios";
+import { loginUser } from "../userSlice";
 
 
 
@@ -28,7 +30,19 @@ const Main = () => {
         setModalOpen(true);
     };
 
-    
+    let user = useSelector((state) => { return state.user });
+    const dispatch = useDispatch();
+
+    const [loading, setLoading] = useState(false);
+    const [msg, setMsg] = useState("");
+
+    const [id, setId] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [file, setfile] = useState("");
+    const [nickname, setNickname] = useState("");
+
+
 
     const handleFileInputChange = () => {
         if (!userName) {
@@ -42,10 +56,10 @@ const Main = () => {
             buttonClick();
         }
     };
-    
-    
-    
-    
+
+
+
+
 
     const uploadButtonClick = (event) => {
         if (!document.getElementById('file').files.length) {
@@ -58,7 +72,7 @@ const Main = () => {
         }
     };
 
-    
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -76,17 +90,53 @@ const Main = () => {
     const renderUserName = userName ? userName + " 님" : "로그인하기";
 
 
+
+
+    const sendFileToServer = async (file) => {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+            const response = await fetch('api/file', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            console.log('File uploaded successfully!');
+            // Handle the response as needed
+        } catch (error) {
+            console.error('Error uploading file:', error.message);
+        }
+    };
+
+    // Example usage
+    const fileInput = document.getElementById('file');
+    fileInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            sendFileToServer(file);
+        }
+    });
+
+
+
+
+
     const handleDetailClick = async () => {
         try {
             const response = await fetch('/api/user');
             let data = await response.json();
             // data형식은 이렇다는 가정으로..
-            data = {
+            /* data = {
                 "userName": "GOGO",
                 "chat_room": [{ "room_number": 1 },
                 { "room_number": 2 },
                 { "room_number": 3 }]
-            }
+            } */
             if (data.chat_room.some(room => room.room_number === 1)) {
                 window.location.href = "/detail";
             }
@@ -94,9 +144,6 @@ const Main = () => {
             console.error('Error handling click:', error);
         }
     };
-
-
-    
 
     return (
         <div id="App">
@@ -112,11 +159,18 @@ const Main = () => {
                 <div onClick={userName ? null : buttonClick} style={{ cursor: "pointer" }} className="e54_2"></div>
                 <span className="e58_2">보관함</span>
 
-                <form method="post" action="api/file" enctype="multipart/form-data">
+                {/* <form method="post" action="api/file" enctype="multipart/form-data">
 
                     <label for="file"  style={{ cursor: "pointer" }} >파일 선택</label>
                     <input type="file" onClick={handleFileInputChange} id="file" accept=".txt"></input>
                     <button type="submit" className="sub" onClick={handleButtonClick} style={{ cursor: "pointer" }} >파일 업로드</button>
+                </form> */}
+
+                <form onSubmit={sendFileToServer} id="file-form">
+
+                    <label for="file" style={{ cursor: "pointer" }} >파일 선택</label>
+                    <input type="file" onClick={handleFileInputChange} id="file" accept=".txt"></input>
+                    <button type="submit" className="sub" /* onClick={handleButtonClick} */ style={{ cursor: "pointer" }} >파일 업로드</button>
                 </form>
 
 

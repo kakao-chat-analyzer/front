@@ -84,11 +84,11 @@ const Detail = () => {
 
    return (
       <div id="App" >
-         
+
          <div className="e272_2" >
-            
+
             <div class="e272_3"></div>
-            
+
             <div class="e272_39"></div>
             <div class="e272_4">
                <div class="e272_5" onClick={logoClick} style={{ cursor: "pointer" }}></div>
@@ -107,14 +107,14 @@ const Detail = () => {
                {Data.map(({ class: className }, index) => (
                   <div key={index} className={className} ></div>
                ))}</div>
-            
-               <span className="e42__">카카오톡</span>
-               <span className="e42_3">추억 저장소</span>
-               <span onClick={userName ? null : buttonClick} style={userName ? null : { cursor: "pointer" }} className="e42_12">{renderUserName}</span>
-               <span onClick={introductionClick} style={{ cursor: "pointer" }} className="e204_6">이용방법</span>
-               <div className="e54_2"></div>
-               <div class="e272_48"></div>
-            
+
+            <span className="e42__">카카오톡</span>
+            <span className="e42_3">추억 저장소</span>
+            <span onClick={userName ? null : buttonClick} style={userName ? null : { cursor: "pointer" }} className="e42_12">{renderUserName}</span>
+            <span onClick={introductionClick} style={{ cursor: "pointer" }} className="e204_6">이용방법</span>
+            <div className="e54_2"></div>
+            <div class="e272_48"></div>
+
          </div>
       </div>
 
