@@ -92,36 +92,43 @@ const Main = () => {
 
 
 
-    const sendFileToServer = async (file) => {
-        const formData = new FormData();
-        formData.append('file', file);
+    const filesubmitFunc = async (e) => {
+        e.preventDefault();
 
-        try {
-            const response = await fetch('api/file', {
-                method: 'POST',
-                body: formData,
+        const fileInput = document.getElementById('file');
+        const File = fileInput.files[0]
+        setfile(File);
+
+        if (!File) {
+            console.log('파일을 선택해주세요.');
+            return;
+        }
+        
+        else {
+            /* const formData = new FormData();
+            formData.append('file', File); */
+            console.log(File);
+            const userData = {
+                "file": file
+            };
+
+            axios.post("/api/file", null, { params: userData }
+            ).then((res) => {
+                
+
+                console.log(res);
+                console.log(res.status);
+
+                if (res.status === 200) {
+                    console.log("파일 업로드 성공");
+
+                } else if (res.status === 401) {
+                    setMsg("다시 입력해주세요.");
+                }
             });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-
-            console.log('File uploaded successfully!');
-            // Handle the response as needed
-        } catch (error) {
-            console.error('Error uploading file:', error.message);
         }
-    };
-
-    // Example usage
-    const fileInput = document.getElementById('file');
-    fileInput.addEventListener('change', (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            sendFileToServer(file);
-        }
-    });
-
+        setLoading(true);
+    }
 
 
 
@@ -166,7 +173,7 @@ const Main = () => {
                     <button type="submit" className="sub" onClick={handleButtonClick} style={{ cursor: "pointer" }} >파일 업로드</button>
                 </form> */}
 
-                <form onSubmit={sendFileToServer} id="file-form">
+                <form onSubmit={filesubmitFunc} id="file-form">
 
                     <label for="file" style={{ cursor: "pointer" }} >파일 선택</label>
                     <input type="file" onClick={handleFileInputChange} id="file" accept=".txt"></input>
