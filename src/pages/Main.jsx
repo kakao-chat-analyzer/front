@@ -105,15 +105,15 @@ const Main = () => {
         }
         
         else {
-            /* const formData = new FormData();
-            formData.append('file', File); */
-            console.log(File);
-            const userData = {
-                "file": file
-            };
+            const formData = new FormData();
+            formData.append('file', File);
+            const config = {
+                headers: {
+                  'Content-Type': 'multipart/form-data',
+                },
+              };
 
-            axios.post("/api/file", null, { params: userData }
-            ).then((res) => {
+            axios.post("/api/file", formData, config).then((res) => {
                 
 
                 console.log(res);
@@ -129,7 +129,6 @@ const Main = () => {
         }
         setLoading(true);
     }
-
 
 
 
