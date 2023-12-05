@@ -20,6 +20,12 @@ const Detail = () => {
    const [afterX, setAfterX] = useState(0);
    const [position, setPosition] = useState(0);
 
+   const [chatroom1Visible, setchatroom1Visible] = useState(false);
+   const [chatroom2Visible, setchatroom2Visible] = useState(false);
+   const [chatroom3Visible, setchatroom3Visible] = useState(false);
+   const [chatroom4Visible, setchatroom4Visible] = useState(false);
+
+
 
    const Data = [
       { class: "e271_2" },
@@ -82,6 +88,40 @@ const Detail = () => {
    const renderUserName = userName ? userName + " 님" : "로그인하기";
 
 
+   useEffect(() => {
+      const fetchData = async () => {
+         try {
+            const response = await fetch('/api/analysis');
+            const body = await response.json();
+            if (Array.isArray(body.chat_room)) {
+
+               const roomNumberOneExists = body.chat_room.some(room => room.room_number === 1);
+               setchatroom1Visible(roomNumberOneExists);
+            }
+            if (Array.isArray(body.chat_room)) {
+
+               const roomNumbertwoExists = body.chat_room.some(room => room.room_number === 2);
+               setchatroom2Visible(roomNumbertwoExists);
+            }
+            if (Array.isArray(body.chat_room)) {
+
+               const roomNumberthreeExists = body.chat_room.some(room => room.room_number === 3);
+               setchatroom3Visible(roomNumberthreeExists);
+            }
+            if (Array.isArray(body.chat_room)) {
+
+               const roomNumberfourExists = body.chat_room.some(room => room.room_number === 4);
+               setchatroom4Visible(roomNumberfourExists);
+            }
+         } catch (error) {
+            console.error('Error fetching data:', error);
+         }
+      };
+
+      fetchData();
+   }, []);
+
+
    return (
       <div id="App" >
 
@@ -93,7 +133,7 @@ const Detail = () => {
             <div class="e272_4">
                <div class="e272_5" onClick={logoClick} style={{ cursor: "pointer" }}></div>
             </div>
-            <div
+            {/* <div
                onMouseDown={(e) => handleScroll(e, 'start')}
                onMouseUp={(e) => handleScroll(e, 'end')}
                onMouseLeave={(e) => handleScroll(e, 'leave')}
@@ -106,7 +146,16 @@ const Detail = () => {
             >
                {Data.map(({ class: className }, index) => (
                   <div key={index} className={className} ></div>
-               ))}</div>
+               ))}</div> */}
+            {chatroom1Visible && <div class="e1"></div>}
+            <div class = "e1"></div>
+            <div class = "e2"></div>
+            <div class = "e3"></div>
+            <div class = "e4"></div>
+            <div></div>
+            <div></div>
+
+            
 
             <span className="e42__">카카오톡</span>
             <span className="e42_3">추억 저장소</span>

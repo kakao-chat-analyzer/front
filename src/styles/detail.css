@@ -39,13 +39,13 @@
    border-bottom-right-radius: 20px;
 }
 
-.e271_2 {
+.e1 {
    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
    background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
    width: 338px;
    height: 584px;
    position: absolute;
-   left: 980px;
+   left: 222px;
    top: 275px;
    border-top-left-radius: 15px;
    border-top-right-radius: 15px;
@@ -53,21 +53,7 @@
    border-bottom-right-radius: 15px;
 }
 
-.e357_2 {
-   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
-   background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
-   width: 338px;
-   height: 584px;
-   position: absolute;
-   left: 1359px;
-   top: 275px;
-   border-top-left-radius: 15px;
-   border-top-right-radius: 15px;
-   border-bottom-left-radius: 15px;
-   border-bottom-right-radius: 15px;
-}
-
-.e271_3 {
+.e2 {
    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
    background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
    width: 338px;
@@ -81,19 +67,37 @@
    border-bottom-right-radius: 15px;
 }
 
-.e271_4 {
+.e3 {
    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
    background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
    width: 338px;
    height: 584px;
    position: absolute;
-   left: 222px;
+   left: 980px;
    top: 275px;
    border-top-left-radius: 15px;
    border-top-right-radius: 15px;
    border-bottom-left-radius: 15px;
    border-bottom-right-radius: 15px;
 }
+
+.e4 {
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+   background-color: rgba(48.86170729994774, 47.662970423698425, 41.36959232389927, 0.05999999865889549);
+   width: 338px;
+   height: 584px;
+   position: absolute;
+   left: 1359px;
+   top: 275px;
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+   border-bottom-right-radius: 15px;
+}
+
+
+
+
 
 .e271_5 {
    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
