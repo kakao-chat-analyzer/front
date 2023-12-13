@@ -154,25 +154,6 @@ const Main = () => {
         }
         setLoading(true);
     }
-
-
-
-    /* const handleDetailClick = async () => {
-        try {
-            const response = await fetch('/api/user');
-            let data = await response.json(); 
-            // data형식은 이렇다는 가정으로..
-            data = {
-                "userName": "GOGO",
-                "chat_room": [{ "room_number": 1 },
-                { "room_number": 2 },
-                { "room_number": 3 }]
-            }
-
-        } catch (error) {
-            console.error('Error handling click:', error);
-        }
-    }; */
     
 
     return (
@@ -201,13 +182,13 @@ const Main = () => {
 
                 
                 {room1Visible && <div className="e58_7" /* onClick={userName ? handleDetailClick : null} */ style={userName ? { cursor: "pointer" } : null}></div>}
-                {room2Visible && <div className="e58_8"></div>}
-                {room3Visible && <div className="e58_9"></div>}
-                {room4Visible && <div className="e58_10"></div>}
-                {room5Visible && <div className="e58_11"></div>}
-                {room6Visible && <div className="e58_12"></div>}
-                {room7Visible && <div className="e58_13"></div>}
-                {room8Visible && <div className="e58_14"></div>}
+                {room2Visible && <div className="e58_8" style={userName ? { cursor: "pointer" } : null}></div>}
+                {room3Visible && <div className="e58_9" style={userName ? { cursor: "pointer" } : null}></div>}
+                {room4Visible && <div className="e58_10" style={userName ? { cursor: "pointer" } : null}></div>}
+                {room5Visible && <div className="e58_11" style={userName ? { cursor: "pointer" } : null}></div>}
+                {room6Visible && <div className="e58_12" style={userName ? { cursor: "pointer" } : null}></div>}
+                {room7Visible && <div className="e58_13" style={userName ? { cursor: "pointer" } : null}></div>}
+                {room8Visible && <div className="e58_14" style={userName ? { cursor: "pointer" } : null}></div>}
                 <div>
                     <button className="e" onClick={showModal}>모달 띄우기</button>
                     {modalOpen && <ModalBasic setModalOpen={setModalOpen} />}
