@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import '../styles/detail.css';
 
 function buttonClick() {
@@ -17,6 +18,7 @@ function logoClick() {
 
 const Detail = () => {
 
+
    const [isScroll, setIsScroll] = useState(false);
    const [originX, setOriginX] = useState(0);
    const [afterX, setAfterX] = useState(0);
@@ -26,6 +28,10 @@ const Detail = () => {
    const [chatroom2Visible, setchatroom2Visible] = useState(false);
    const [chatroom3Visible, setchatroom3Visible] = useState(false);
    const [chatroom4Visible, setchatroom4Visible] = useState(false);
+
+   const location = useLocation();
+   const searchParams = new URLSearchParams(location.search);
+   const chatroomNum = searchParams.get('chatroomNum');
 
 
    const chatData = {
@@ -125,7 +131,7 @@ const Detail = () => {
       );
    };
 
-   useEffect(() => {
+   /* useEffect(() => {
       const fetchData = async () => {
          try {
             const response = await fetch('/api/analysis');
@@ -150,6 +156,28 @@ const Detail = () => {
                const roomNumberfourExists = body.chat_room.some(room => room.room_number === 4);
                setchatroom4Visible(roomNumberfourExists);
             }
+         } catch (error) {
+            console.error('Error fetching data:', error);
+         }
+      };
+
+      fetchData();
+   }, []); */
+
+   useEffect(() => {
+      const fetchData = async () => {
+         try {
+            const response = await fetch('http://localhost:8080/api/detail?chatroomNum=1');
+            const body = await response.json();
+
+            // 여기서 가져온 데이터를 사용할 수 있습니다.
+            console.log(body); // 받아온 데이터 확인
+
+            // 받아온 데이터에 따라 상태 변경 또는 원하는 작업 수행
+            // 예를 들어, 받아온 데이터를 가지고 상태를 변경하는 등의 작업을 수행할 수 있습니다.
+            // setChatroom1Visible(body.someProperty);
+            // 위와 같이 받아온 데이터를 사용하여 상태 변경 또는 다른 작업을 수행합니다.
+
          } catch (error) {
             console.error('Error fetching data:', error);
          }

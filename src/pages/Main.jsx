@@ -3,7 +3,7 @@ import '../styles/main.css';
 import { useState, useEffect, useCallback } from 'react';
 import ModalBasic from '../components/Modal';
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios, { post } from "axios";
 import { loginUser } from "../userSlice";
 
@@ -18,8 +18,8 @@ function introductionClick() {
     window.location.href = "/introduction";
 }
 
-function detailClick() {
-    window.location.href = "/detail";
+function detailClick(chatroomNum) {
+    window.location.href = `/detail?chatroomNum=${chatroomNum}`;
 }
 
 const Main = () => {
@@ -159,7 +159,7 @@ const Main = () => {
         setLoading(true);
     }
     
-
+    
     return (
         <div id="App">
             <div className="e42_2">
@@ -184,15 +184,15 @@ const Main = () => {
                 </form>
 
 
-                
-                {room1Visible && <div className="e58_7" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
-                {room2Visible && <div className="e58_8" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
-                {room3Visible && <div className="e58_9" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
-                {room4Visible && <div className="e58_10" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
-                {room5Visible && <div className="e58_11" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
-                {room6Visible && <div className="e58_12" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
-                {room7Visible && <div className="e58_13" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
-                {room8Visible && <div className="e58_14" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
+                 
+                {room1Visible && <div className="e58_7" onClick={() => detailClick(1)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room2Visible && <div className="e58_8" onClick={() => detailClick(2)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room3Visible && <div className="e58_9" onClick={() => detailClick(3)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room4Visible && <div className="e58_10" onClick={() => detailClick(4)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room5Visible && <div className="e58_11" onClick={() => detailClick(5)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room6Visible && <div className="e58_12" onClick={() => detailClick(6)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room7Visible && <div className="e58_13" onClick={() => detailClick(7)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room8Visible && <div className="e58_14" onClick={() => detailClick(8)} style={userName ? { cursor: "pointer" } : null}></div>}
                 <div>
                     <button className="e" onClick={showModal}>모달 띄우기</button>
                     {modalOpen && <ModalBasic setModalOpen={setModalOpen} />}
