@@ -18,6 +18,10 @@ function introductionClick() {
     window.location.href = "/introduction";
 }
 
+function detailClick() {
+    window.location.href = "/detail";
+}
+
 const Main = () => {
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -181,14 +185,14 @@ const Main = () => {
 
 
                 
-                {room1Visible && <div className="e58_7" /* onClick={userName ? handleDetailClick : null} */ style={userName ? { cursor: "pointer" } : null}></div>}
-                {room2Visible && <div className="e58_8" style={userName ? { cursor: "pointer" } : null}></div>}
-                {room3Visible && <div className="e58_9" style={userName ? { cursor: "pointer" } : null}></div>}
-                {room4Visible && <div className="e58_10" style={userName ? { cursor: "pointer" } : null}></div>}
-                {room5Visible && <div className="e58_11" style={userName ? { cursor: "pointer" } : null}></div>}
-                {room6Visible && <div className="e58_12" style={userName ? { cursor: "pointer" } : null}></div>}
-                {room7Visible && <div className="e58_13" style={userName ? { cursor: "pointer" } : null}></div>}
-                {room8Visible && <div className="e58_14" style={userName ? { cursor: "pointer" } : null}></div>}
+                {room1Visible && <div className="e58_7" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room2Visible && <div className="e58_8" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room3Visible && <div className="e58_9" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room4Visible && <div className="e58_10" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room5Visible && <div className="e58_11" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room6Visible && <div className="e58_12" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room7Visible && <div className="e58_13" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room8Visible && <div className="e58_14" onClick={detailClick} style={userName ? { cursor: "pointer" } : null}></div>}
                 <div>
                     <button className="e" onClick={showModal}>모달 띄우기</button>
                     {modalOpen && <ModalBasic setModalOpen={setModalOpen} />}

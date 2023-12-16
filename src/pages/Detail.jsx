@@ -13,6 +13,8 @@ function logoClick() {
    window.location.href = "/";
 }
 
+
+
 const Detail = () => {
 
    const [isScroll, setIsScroll] = useState(false);
@@ -26,6 +28,33 @@ const Detail = () => {
    const [chatroom4Visible, setchatroom4Visible] = useState(false);
 
 
+   const chatData = {
+      "shuffleMessage": [
+         " 한시간 반정도뒤에",
+         " 체력 미치셨네..",
+         " 꿀잠",
+         " 미쳤읍니다",
+         " 선대 시험지 안 들고오시나요",
+         " 전 가지러길려고요",
+         " 어제 까먹고",
+         " 오늘은…",
+         " 서울이라..",
+         " 다른날에 가려고 합니다."
+      ],
+      "shuffleUser": [
+         "이 형진 20 소웨",
+         "이 형진 20 소웨",
+         "이 형진 20 소웨",
+         "이 형진 20 소웨",
+         "고건영",
+         "고건영",
+         "고건영",
+         "고건영",
+         "고건영",
+         "이 형진 20 소웨"
+      ],
+      "date": "2023-06-20"
+   };
 
    const Data = [
       { class: "e271_2" },
@@ -36,6 +65,17 @@ const Detail = () => {
       { class: "e271_6" },
       // ... Additional data
    ];
+
+   /* const ChatBubble = ({ user, message }) => {
+      return (
+         <div className="chat-bubble">
+            <span className="user">{user}</span>
+            <span className="message">{message}</span>
+         </div>
+      );
+   }; */
+
+   
 
    const handleScroll = (e, scroll) => {
       switch (scroll) {
@@ -55,19 +95,6 @@ const Detail = () => {
       }
    };
 
-   const handleSlide = (e) => {
-      const scrollSpeed = 1.55; // Adjust this value to change the scroll speed
-      const newPosition = -(e.clientX - originX) * scrollSpeed + afterX;
-      const hiddenLength = e.currentTarget.offsetWidth - 166 * Data.length;
-
-      if (!isScroll) {
-         return;
-      }
-
-      if (newPosition > 10 && newPosition < hiddenLength) {
-         setPosition(newPosition);
-      }
-   };
 
    const [userName, setUserName] = useState("");
 
@@ -87,6 +114,16 @@ const Detail = () => {
 
    const renderUserName = userName ? userName + " 님" : "로그인하기";
 
+   const ChatBubble = ({ user, message }) => {
+      // Replace with the username variable
+      
+      return (
+         <div className={`chat-bubble ${user === userName ? 'my-message' : 'other-message'}`} >
+            <span className="message-username">{user}</span>
+            <span className="message">{message}</span>
+         </div>
+      );
+   };
 
    useEffect(() => {
       const fetchData = async () => {
@@ -129,26 +166,25 @@ const Detail = () => {
 
             <div class="e272_3"></div>
 
+            
             <div class="e272_39"></div>
             <div class="e272_4">
                <div class="e272_5" onClick={logoClick} style={{ cursor: "pointer" }}></div>
             </div>
-            {/* <div
-               onMouseDown={(e) => handleScroll(e, 'start')}
-               onMouseUp={(e) => handleScroll(e, 'end')}
-               onMouseLeave={(e) => handleScroll(e, 'leave')}
-               onMouseMove={handleSlide}
-               style={{
-                  transform: `translateX(-${position}px)`,
-                  cursor: isScroll ? 'grabbing' : 'grab',
-                  userSelect: 'none',
-               }}
-            >
-               {Data.map(({ class: className }, index) => (
-                  <div key={index} className={className} ></div>
-               ))}</div> */}
-            {chatroom1Visible && <div class="e1"></div>}
-            <div class = "e1"></div>
+            
+            
+            
+               <div className="chat-container" style={{ overflow: "auto" }}>
+                  {chatData.shuffleMessage.map((message, index) => (
+                     <ChatBubble
+                        key={index}
+                        user={chatData.shuffleUser[index]}
+                        message={message}
+                     />
+                  ))}
+               </div>
+            
+            
             <div class = "e2"></div>
             <div class = "e3"></div>
             <div class = "e4"></div>

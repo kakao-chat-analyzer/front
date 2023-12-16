@@ -234,6 +234,67 @@
    background-size: cover;
 }
 
+.chat-container {
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+   background-color: rgba(186.0000041127205, 206.0000029206276, 224.000001847744, 1);
+   width: 338px;
+   height: 584px;
+   position: absolute;
+   left: 222px;
+   top: 275px;
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+   border-bottom-right-radius: 15px;
+   display: flex;
+   flex-direction: column;
+}
+
+.chat-bubble {
+   display: flex;
+   flex-direction: column;
+   max-width: 70%;
+   padding: 10px;
+   border-radius: 12px;
+   margin-bottom: 8px;
+}
+
+.message-username {
+   font-size: 12px;
+   color: #888;
+   margin-bottom: 3px;
+}
+
+
+.my-message {
+   background-color: #4CAF50;
+   color: #fff;
+   
+   align-self: flex-end;
+}
+
+.other-message {
+   background-color: #EAEAEA;
+   color: #333;
+   align-self: flex-start;
+}
+
+
+/* Styling for the scrollbar */
+.chat-container::-webkit-scrollbar {
+   width: 6px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+   background-color: rgba(0, 0, 0, 0.3);
+   border-radius: 3px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+   background-color: transparent;
+}
+
+
 
 
 .App-header {
