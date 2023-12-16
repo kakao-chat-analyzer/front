@@ -131,43 +131,12 @@ const Detail = () => {
       );
    };
 
-   /* useEffect(() => {
-      const fetchData = async () => {
-         try {
-            const response = await fetch('/api/analysis');
-            const body = await response.json();
-            if (Array.isArray(body.chat_room)) {
-
-               const roomNumberOneExists = body.chat_room.some(room => room.room_number === 1);
-               setchatroom1Visible(roomNumberOneExists);
-            }
-            if (Array.isArray(body.chat_room)) {
-
-               const roomNumbertwoExists = body.chat_room.some(room => room.room_number === 2);
-               setchatroom2Visible(roomNumbertwoExists);
-            }
-            if (Array.isArray(body.chat_room)) {
-
-               const roomNumberthreeExists = body.chat_room.some(room => room.room_number === 3);
-               setchatroom3Visible(roomNumberthreeExists);
-            }
-            if (Array.isArray(body.chat_room)) {
-
-               const roomNumberfourExists = body.chat_room.some(room => room.room_number === 4);
-               setchatroom4Visible(roomNumberfourExists);
-            }
-         } catch (error) {
-            console.error('Error fetching data:', error);
-         }
-      };
-
-      fetchData();
-   }, []); */
+   
 
    useEffect(() => {
       const fetchData = async () => {
          try {
-            const response = await fetch('http://localhost:8080/api/detail?chatroomNum=1');
+            const response = await fetch(`/detail?chatroomNum=${chatroomNum}`);
             const body = await response.json();
 
             // 여기서 가져온 데이터를 사용할 수 있습니다.
@@ -202,15 +171,15 @@ const Detail = () => {
             
             
             
-               <div className="chat-container" style={{ overflow: "auto" }}>
-                  {chatData.shuffleMessage.map((message, index) => (
-                     <ChatBubble
-                        key={index}
-                        user={chatData.shuffleUser[index]}
-                        message={message}
-                     />
-                  ))}
-               </div>
+            <div className="chat-container" style={{ overflow: "auto" }}>
+               {chatData.shuffleMessage.map((message, index) => (
+                  <ChatBubble
+                     key={index}
+                     user={chatData.shuffleUser[index]}
+                     message={message}
+                  />
+               ))}
+            </div>
             
             
             <div class = "e2"></div>
