@@ -119,8 +119,8 @@ const Detail = () => {
       
       return (
          <div className={`chat-bubble ${user === userName ? 'my-message' : 'other-message'}`} >
-            <span className="message-username">{user}</span>
-            <span className="message">{message}</span>
+            <span className="message-username">{`${user != userName ? user : ''}`}</span>
+            <span className={`${user === userName ? 'my_message' : 'other_message'}`} >{message}</span>
          </div>
       );
    };

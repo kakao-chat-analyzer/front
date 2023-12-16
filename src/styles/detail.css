@@ -265,16 +265,33 @@
    margin-bottom: 3px;
 }
 
-
-.my-message {
+.my_message {
+   padding: 10px;
+   border-radius: 12px;
    background-color: #4CAF50;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   word-wrap: break-word;
+   max-width: 100%;
+   font-size: 14px;
+   line-height: 1.5;
+ }
+ .other_message {
+   padding: 10px;
+   border-radius: 12px;
+   background-color: #EAEAEA;
+   color: #333;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   word-wrap: break-word;
+   max-width: 100%;
+   font-size: 14px;
+   line-height: 1.5;
+ }
+.my-message {
    color: #fff;
-   
    align-self: flex-end;
 }
 
 .other-message {
-   background-color: #EAEAEA;
    color: #333;
    align-self: flex-start;
 }
