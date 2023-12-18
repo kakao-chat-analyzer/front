@@ -32,16 +32,17 @@ const Analysis = () => {
    const [keyWord , setKeyWord] = useState([]);
    const [isKey, setIsKey] = useState(false);
 
-
+   const [dailyData, setdailyData] = useState([]);
 
    useEffect(() => {
       const fetchData = async () => {
         try {
             console.log("a");
-            const response = await fetch(`/api/keyword?date=${date}&chatroomNum=${chatroomNum}`);
+            const response = await fetch(`/api/analysis?date=${date}&chatroomNum=${chatroomNum}`);
             const body = await response.json();
             
             // Set the fetched data into chatroomData state
+            setdailyData(body);
             const key = body.keyword;
             setKeyWord(key);
             console.log(key)
@@ -81,12 +82,8 @@ const Analysis = () => {
    
    const keywordFunc = (e) => {
       e.preventDefault();
-
-        let body = {
-          "keyword" : keyWord
-        };
    
-        axios.post(`/api/analysis?date=${date}&chatroomNum=${chatroomNum}`)
+        axios.post(`/api/keyword?date=${date}&chatroomNum=${chatroomNum}`)
           .then((res) => {
             console.log(res.status);
             if (res.status === 200) {
@@ -94,6 +91,43 @@ const Analysis = () => {
             }
           });
     }
+
+    const ChatBubble = ({ user, message, currentUserName }) => {
+      const isMyMessage = user === currentUserName;
+    
+      return (
+        <div className={`chat-bubble ${isMyMessage ? 'my-message' : 'other-message'}`}>
+          {!isMyMessage && <span className="message-username">{user}</span>}
+          <span className={`${isMyMessage ? 'my_message' : 'other_message'}`}>{message}</span>
+        </div>
+      );
+    };
+    
+    const ChatroomContainer = ({ chatrooms, currentUserName }) => {
+      console.log("chatRoooooooM"+ chatrooms.dailyMessages[0])
+      console.log("chatRoooooooM"+ chatrooms.dailyUser)
+      return (
+        <>
+          {chatrooms.map((chatroom, roomIndex) => (
+            <div
+              key={roomIndex}
+              className={`chat-container custom-scrollbar`}
+              style={{ overflow: "auto", cursor: currentUserName ? "pointer" : "default" }}
+            >
+              {chatroom.dailyUser.map((user, index) => (
+                <ChatBubble
+                  key={index}
+                  user={user}
+                  message={chatroom.dailyMessages[index]}
+                  currentUserName={currentUserName}
+                />
+              ))}
+            </div>
+          ))}
+        </>
+      );
+    };
+
    
 
    return (
@@ -112,6 +146,9 @@ const Analysis = () => {
             <span onClick={introductionClick} style={{ cursor: "pointer" }} class="e272_50">이용방법</span>
             <div class="e272_51"></div>
             <div class="e71_47"></div>
+
+            <ChatroomContainer chatrooms={dailyData} />
+
             <div class="e602_25"></div>
             <div class="e111_3"></div>
             <div class="e585_16"></div>

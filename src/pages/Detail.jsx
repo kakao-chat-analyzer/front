@@ -37,7 +37,7 @@ const Detail = () => {
       try {
           const response = await fetch(`/api/detail?chatroomNum=${chatroomNum}`);
           const body = await response.json();
-          
+          console.log("TEST" + body)
           // Set the fetched data into chatroomData state
           
          setChatroomData(body);
@@ -84,6 +84,7 @@ const Detail = () => {
    };
 
    const ChatroomContainer = ({ chatrooms }) => {
+      console.log("Detail:: " + chatrooms)
       return (
          <>
             {chatrooms.map((chatroom, roomIndex) => (
