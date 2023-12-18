@@ -34,6 +34,10 @@ const Analysis = () => {
 
    const [dailyData, setdailyData] = useState([]);
 
+   const [messages, setMessages] = useState([]);
+   const [users, setUsers] = useState([]);
+
+
    useEffect(() => {
       const fetchData = async () => {
         try {
@@ -42,7 +46,12 @@ const Analysis = () => {
             const body = await response.json();
             
             // Set the fetched data into chatroomData state
-            setdailyData(body);
+            const { dailyMessages, dailyUser } = body;
+
+        // Set messages and users state with fetched data
+            setMessages(dailyMessages);
+            setUsers(dailyUser);
+            
             const key = body.keyword;
             setKeyWord(key);
             console.log(key)
@@ -92,41 +101,7 @@ const Analysis = () => {
           });
     }
 
-    const ChatBubble = ({ user, message, currentUserName }) => {
-      const isMyMessage = user === currentUserName;
-    
-      return (
-        <div className={`chat-bubble ${isMyMessage ? 'my-message' : 'other-message'}`}>
-          {!isMyMessage && <span className="message-username">{user}</span>}
-          <span className={`${isMyMessage ? 'my_message' : 'other_message'}`}>{message}</span>
-        </div>
-      );
-    };
-    
-    const ChatroomContainer = ({ chatrooms, currentUserName }) => {
-      console.log("chatRoooooooM"+ chatrooms.dailyMessages[0])
-      console.log("chatRoooooooM"+ chatrooms.dailyUser)
-      return (
-        <>
-          {chatrooms.map((chatroom, roomIndex) => (
-            <div
-              key={roomIndex}
-              className={`chat-container custom-scrollbar`}
-              style={{ overflow: "auto", cursor: currentUserName ? "pointer" : "default" }}
-            >
-              {chatroom.dailyUser.map((user, index) => (
-                <ChatBubble
-                  key={index}
-                  user={user}
-                  message={chatroom.dailyMessages[index]}
-                  currentUserName={currentUserName}
-                />
-              ))}
-            </div>
-          ))}
-        </>
-      );
-    };
+   
 
    
 
@@ -145,11 +120,11 @@ const Analysis = () => {
             <span onClick={userName ? null : buttonClick} style={userName ? null : { cursor: "pointer" }} class="e272_49">{renderUserName}</span>
             <span onClick={introductionClick} style={{ cursor: "pointer" }} class="e272_50">이용방법</span>
             <div class="e272_51"></div>
-            <div class="e71_47"></div>
+            
 
-            <ChatroomContainer chatrooms={dailyData} />
+            
 
-            <div class="e602_25"></div>
+            
             <div class="e111_3"></div>
             <div class="e585_16"></div>
             <div class="e602_19"></div>
@@ -162,6 +137,21 @@ const Analysis = () => {
             <span class="e420_4">내가 말한 횟수</span>
             <span class="e420_3">대화 횟수</span>
             <span class="e420_6">상대가 말한 횟수</span>
+
+            <div className="chat-container"style={{ overflow: "auto"}}>
+               {messages.map((message, index) => (
+               <div
+                  key={index}
+                  className={`chat-bubble ${users[index] === userName ? 'my-message' : 'other-message'}`}
+               >
+                  <span className="message-username">{users[index] === userName ?'':users[index]}</span>
+                  <div className={users[index] === userName ? 'my_message' : 'other_message'}>
+                     {message}
+                  </div>
+               </div>
+               ))}
+            </div>
+            {/* <div class="e602_25"></div> */}
          </div>
          
       </div>

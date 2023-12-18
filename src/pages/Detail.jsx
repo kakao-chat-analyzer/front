@@ -84,7 +84,7 @@ const Detail = () => {
    };
 
    const ChatroomContainer = ({ chatrooms }) => {
-      console.log("Detail:: " + chatrooms)
+      
       return (
          <>
             {chatrooms.map((chatroom, roomIndex) => (
