@@ -15,7 +15,7 @@ function logoClick() {
 }
 
 function analysisClick(date, chatroomNum) {
-   window.location.href = `/analysis?date=${date}?chatroomNum=${chatroomNum}`;
+   window.location.href = `/analysis?date=${date}&chatroomNum=${chatroomNum}`;
 }
 
 
@@ -37,144 +37,7 @@ const Detail = () => {
    const chatroomNum = searchParams.get('chatroomNum');
 
 
-   /* const chatData = {
-      "shuffleMessage": [
-         " 한시간 반정도뒤에",
-         " 체력 미치셨네..",
-         " 꿀잠",
-         " 미쳤읍니다",
-         " 선대 시험지 안 들고오시나요",
-         " 전 가지러길려고요",
-         " 어제 까먹고",
-         " 오늘은…",
-         " 서울이라..",
-         " 다른날에 가려고 합니다."
-      ],
-      "shuffleUser": [
-         "이 형진 20 소웨",
-         "이 형진 20 소웨",
-         "이 형진 20 소웨",
-         "이 형진 20 소웨",
-         "고건영",
-         "고건영",
-         "고건영",
-         "고건영",
-         "고건영",
-         "이 형진 20 소웨"
-      ],
-      "date": "2023-06-20"
-   }; */
-
-   /* const chatroomData = [
-      {
-         "shuffleMessage": [
-            " 한시간 반정도뒤에",
-            " 체력 미치셨네..",
-            " 꿀잠",
-            " 미쳤읍니다",
-            " 선대 시험지 안 들고오시나요",
-            " 전 가지러길려고요",
-            " 어제 까먹고",
-            " 오늘은…",
-            " 서울이라..",
-            " 다른날에 가려고 합니다."
-         ],
-         "shuffleUser": [
-            "이 형진 20 소웨",
-            "이 형진 20 소웨",
-            "이 형진 20 소웨",
-            "이 형진 20 소웨",
-            "고건영",
-            "고건영",
-            "고건영",
-            "고건영",
-            "고건영",
-            "이 형진 20 소웨"
-         ],
-         "date": "2023-06-20"
-      },
-      {
-         "shuffleMessage": [
-            " ㅎ",
-            " 남자?",
-            " ㅇㅇ",
-            " ㅋㅋㅋㅋ",
-            " 주변에 여자보여?",
-            " ㄴㄴ",
-            " 아니",
-            " 개 에반데",
-            " ㅎㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-            " ㄹㅇ 풀강이야?"
-         ],
-         "shuffleUser": [
-            "고건영",
-            "이 형진 20 소웨",
-            "고건영",
-            "고건영",
-            "이 형진 20 소웨",
-            "고건영",
-            "고건영",
-            "고건영",
-            "고건영",
-            "고건영"
-         ],
-         "date": "2023-03-24"
-      },
-      {
-         "shuffleMessage": [
-            " 앙",
-            " ㅎㅋㅋㅋㅋㅋㅋ",
-            " 100임?",
-            " 예아쓰",
-            " 5번",
-            " 맞았다",
-            " 개꿀",
-            " ㅇㅈ~ㅋㅋ",
-            " ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-            " 개뀰"
-         ],
-         "shuffleUser": [
-            "고건영",
-            "고건영",
-            "고건영",
-            "이 형진 20 소웨",
-            "이 형진 20 소웨",
-            "이 형진 20 소웨",
-            "이 형진 20 소웨",
-            "고건영",
-            "고건영",
-            "고건영"
-         ],
-         "date": "2023-04-23"
-      },
-      {
-         "shuffleMessage": [
-            " -3 인 거 같아",
-            " 그럼 계산이 맞아",
-            " -45/15",
-            " 해서 -3 나오거든",
-            " ㅇㅎ",
-            " 근데 문제가",
-            " 잘못",
-            " 됐을라나",
-            " 나오면 족보대로 답도 나오긴 해",
-            " 그냥 내일"
-         ],
-         "shuffleUser": [
-            "고건영",
-            "고건영",
-            "고건영",
-            "고건영",
-            "이 형진 20 소웨",
-            "이 형진 20 소웨",
-            "이 형진 20 소웨",
-            "이 형진 20 소웨",
-            "고건영",
-            "고건영"
-         ],
-         "date": "2023-06-06"
-      }
-   ]; */
+   
 
    const [chatroomData, setChatroomData] = useState([]);
    const [Date, setDate] = useState([]);
@@ -315,10 +178,10 @@ const Detail = () => {
             <div id="index_wrap">
                <ul id ="leftToRight">
                   
-                  <li><a href={'/analysis?date='+ Date[0] + '?chatroomNum=0'}>{Date[0]}</a></li>
-                  <li><a href={'/analysis?date='+ Date[1] + '?chatroomNum=0'}>{Date[1]}</a></li>
-                  <li><a href={'/analysis?date='+ Date[2] + '?chatroomNum=0'}>{Date[2]}</a></li>
-                  <li><a href={'/analysis?date='+ Date[3] + '?chatroomNum=0'}>{Date[3]}</a></li>
+                  <li><a href={'/analysis?date='+ Date[0] + '&chatroomNum=0'}>{Date[0]}</a></li>
+                  <li><a href={'/analysis?date='+ Date[1] + '&chatroomNum=0'}>{Date[1]}</a></li>
+                  <li><a href={'/analysis?date='+ Date[2] + '&chatroomNum=0'}>{Date[2]}</a></li>
+                  <li><a href={'/analysis?date='+ Date[3] + '&chatroomNum=0'}>{Date[3]}</a></li>
                </ul>
             </div>
 

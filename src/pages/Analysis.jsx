@@ -1,11 +1,9 @@
 import React from "react";
 import '../styles/analysis.css';
 import { useState, useEffect } from 'react';
-import ModalBasic from '../components/Modal';
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
-
+import { useLocation , useParams} from 'react-router-dom';
+import axios from "axios";
 
 
 
@@ -21,19 +19,48 @@ function logoClick() {
    window.location.href = "/";
 }
 
-
-
 const Analysis = () => {
+   const dispatch = useDispatch();
+
+   const location = useLocation();
+   const searchParams = new URLSearchParams(location.search);
+   const chatroomNum = searchParams.get('chatroomNum');
+   const date = searchParams.get('date');
 
    const [userName, setUserName] = useState("");
+   const [fre , setFre] = useState([]);
+   const [keyWord , setKeyWord] = useState([]);
+   const [isKey, setIsKey] = useState(false);
 
-   const [chatTimes, setChatTimes] = useState("");
-   const [a, seta] = useState("");
-   const [b, setb] = useState("");
-   const [c, setc] = useState("");
+
+
+   useEffect(() => {
+      const fetchData = async () => {
+        try {
+            console.log("a");
+            const response = await fetch(`/api/analysis?date=${date}&chatroomNum=${chatroomNum}`);
+            const body = await response.json();
+            
+            // Set the fetched data into chatroomData state
+            const key = body.keyword;
+            setKeyWord(key);
+            console.log(key)
+            setIsKey(key.length)
+            const fres = body.frequently;
+            setFre(fres);
+            console.log(fres);
+            
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
   
+      fetchData();
+    }, [chatroomNum]);
 
-
+    /* if (keyWord.length === 0){
+      console.log("b");
+    } */
 
    useEffect(() => {
       const fetchData = async () => {
@@ -50,6 +77,24 @@ const Analysis = () => {
    }, []);
 
    const renderUserName = userName ? userName + " 님" : "로그인하기";
+   console.log("length"+keyWord.length)
+   
+   const keywordFunc = (e) => {
+      e.preventDefault();
+
+        let body = {
+          "keyword" : keyWord
+        };
+   
+        axios.post(`/api/analysis?date=${date}&chatroomNum=${chatroomNum}`, null, {params: body})
+          .then((res) => {
+            console.log(res.status);
+            if (res.status === 200) {
+              window.location.href = `/analysis?date=${date}&chatroomNum=${chatroomNum}`;
+            }
+          });
+    }
+   
 
    return (
       <div id="App">
@@ -73,11 +118,10 @@ const Analysis = () => {
             <div class="e602_19"></div>
             <div class="e602_22"></div>
             <div class="e602_23"></div>
-            <div class="e602_27"></div>
-            <span class="e111_4">키워드 추출하기</span>
+            <form id="keyword-form" onSubmit={keywordFunc}>
+               {!isKey ? <button type="submit" id="key" style={{ cursor: "pointer" }}></button> : <div></div>}
+            </form>
             <span class="e602_26">날짜</span>
-            <div class="e602_30"></div>
-            <div class="e602_29"></div>
             <span class="e420_4">내가 말한 횟수</span>
             <span class="e420_3">대화 횟수</span>
             <span class="e420_6">상대가 말한 횟수</span>
