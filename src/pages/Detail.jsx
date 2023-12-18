@@ -14,9 +14,9 @@ function logoClick() {
    window.location.href = "/";
 }
 
-
-
-
+function analysisClick(date, chatroomNum) {
+   window.location.href = `/analysis?date=${date}?chatroomNum=${chatroomNum}`;
+}
 
 
 const Detail = () => {
@@ -177,15 +177,21 @@ const Detail = () => {
    ]; */
 
    const [chatroomData, setChatroomData] = useState([]);
+   const [Date, setDate] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
           const response = await fetch(`/api/detail?chatroomNum=${chatroomNum}`);
           const body = await response.json();
+          
           // Set the fetched data into chatroomData state
-          setChatroomData(body);
-        
+          
+         setChatroomData(body);
+         const dates = body.map(item => item.date);
+         setDate(dates);
+         console.log(dates);
+         console.log(Date);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -193,7 +199,7 @@ const Detail = () => {
 
     fetchData();
   }, [chatroomNum]);
-
+  
 
    const [userName, setUserName] = useState("");
 
@@ -231,7 +237,9 @@ const Detail = () => {
                <div
                   key={chatroom.date}
                   className={`chat-container${roomIndex + 1} custom-scrollbar`}
-                  style={{ overflow: "auto" }}
+                  style={{ overflow: "auto", cursor: userName ? "pointer" : "default" }}
+                  onClick={() => analysisClick(Date[roomIndex],chatroomNum)}
+                 
                >
                   {chatroom.shuffleMessage.map((message, index) => (
                      <ChatBubble
@@ -304,7 +312,15 @@ const Detail = () => {
 
             <ChatroomContainer chatrooms={chatroomData} />
 
-
+            <div id="index_wrap">
+               <ul id ="leftToRight">
+                  
+                  <li><a href={'/analysis?date='+ Date[0] + '?chatroomNum=0'}>{Date[0]}</a></li>
+                  <li><a href={'/analysis?date='+ Date[1] + '?chatroomNum=0'}>{Date[1]}</a></li>
+                  <li><a href={'/analysis?date='+ Date[2] + '?chatroomNum=0'}>{Date[2]}</a></li>
+                  <li><a href={'/analysis?date='+ Date[3] + '?chatroomNum=0'}>{Date[3]}</a></li>
+               </ul>
+            </div>
 
             <span className="e42__">카카오톡</span>
             <span className="e42_3">추억 저장소</span>

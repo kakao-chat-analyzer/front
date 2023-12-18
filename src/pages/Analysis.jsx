@@ -3,7 +3,8 @@ import '../styles/analysis.css';
 import { useState, useEffect } from 'react';
 import ModalBasic from '../components/Modal';
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from 'react-router-dom';
+import { useParams } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -19,6 +20,8 @@ function introductionClick() {
 function logoClick() {
    window.location.href = "/";
 }
+
+
 
 const Analysis = () => {
 
