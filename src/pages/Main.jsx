@@ -185,14 +185,14 @@ const Main = () => {
 
 
                  
-                {room1Visible && <div className="e58_7" onClick={() => detailClick(1)} style={userName ? { cursor: "pointer" } : null}></div>}
-                {room2Visible && <div className="e58_8" onClick={() => detailClick(2)} style={userName ? { cursor: "pointer" } : null}></div>}
-                {room3Visible && <div className="e58_9" onClick={() => detailClick(3)} style={userName ? { cursor: "pointer" } : null}></div>}
-                {room4Visible && <div className="e58_10" onClick={() => detailClick(4)} style={userName ? { cursor: "pointer" } : null}></div>}
-                {room5Visible && <div className="e58_11" onClick={() => detailClick(5)} style={userName ? { cursor: "pointer" } : null}></div>}
-                {room6Visible && <div className="e58_12" onClick={() => detailClick(6)} style={userName ? { cursor: "pointer" } : null}></div>}
-                {room7Visible && <div className="e58_13" onClick={() => detailClick(7)} style={userName ? { cursor: "pointer" } : null}></div>}
-                {room8Visible && <div className="e58_14" onClick={() => detailClick(8)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room1Visible && <div className="folder_image e58_7" onClick={() => detailClick(1)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room2Visible && <div className="folder_image e58_8" onClick={() => detailClick(2)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room3Visible && <div className="folder_image e58_9" onClick={() => detailClick(3)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room4Visible && <div className="folder_image e58_10" onClick={() => detailClick(4)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room5Visible && <div className="folder_image e58_11" onClick={() => detailClick(5)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room6Visible && <div className="folder_image e58_12" onClick={() => detailClick(6)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room7Visible && <div className="folder_image e58_13" onClick={() => detailClick(7)} style={userName ? { cursor: "pointer" } : null}></div>}
+                {room8Visible && <div className="folder_image e58_14" onClick={() => detailClick(8)} style={userName ? { cursor: "pointer" } : null}></div>}
                 <div>
                     <button className="e" onClick={showModal}>모달 띄우기</button>
                     {modalOpen && <ModalBasic setModalOpen={setModalOpen} />}
