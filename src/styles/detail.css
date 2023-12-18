@@ -487,6 +487,17 @@
    right: auto;
 }
 
+.re{
+   width: 46px;
+   height: 46px;
+   position: absolute;
+   left: 1651px;
+   top: 166px;
+   background-image: url(../images/re.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
 
 .App-header {
    background-color: #282c34;

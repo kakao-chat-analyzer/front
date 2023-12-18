@@ -18,19 +18,12 @@ function analysisClick(date, chatroomNum) {
    window.location.href = `/analysis?date=${date}&chatroomNum=${chatroomNum}`;
 }
 
+/* function reClick(chatroomNum) {
+   window.location.href = `/detail?chatroomNum=${chatroomNum}`;
+} */
+
 
 const Detail = () => {
-
-
-   const [isScroll, setIsScroll] = useState(false);
-   const [originX, setOriginX] = useState(0);
-   const [afterX, setAfterX] = useState(0);
-   const [position, setPosition] = useState(0);
-
-   const [chatroom1Visible, setchatroom1Visible] = useState(false);
-   const [chatroom2Visible, setchatroom2Visible] = useState(false);
-   const [chatroom3Visible, setchatroom3Visible] = useState(false);
-   const [chatroom4Visible, setchatroom4Visible] = useState(false);
 
    const location = useLocation();
    const searchParams = new URLSearchParams(location.search);
@@ -140,6 +133,10 @@ const Detail = () => {
       fetchData();
    }, []); */
 
+   
+      const handleRefresh = () => {
+        window.location.reload(); // Reload the page
+      }
 
    return (
       <div id="App" >
@@ -184,6 +181,8 @@ const Detail = () => {
                   <li><a href={'/analysis?date='+ Date[3] + '&chatroomNum=0'}>{Date[3]}</a></li>
                </ul>
             </div>
+
+            <div className='re' style={{ cursor: "pointer" }} onClick={handleRefresh}></div>
 
             <span className="e42__">카카오톡</span>
             <span className="e42_3">추억 저장소</span>

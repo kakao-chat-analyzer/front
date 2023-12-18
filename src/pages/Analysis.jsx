@@ -82,11 +82,11 @@ const Analysis = () => {
    const keywordFunc = (e) => {
       e.preventDefault();
 
-        let body = {
-          "keyword" : keyWord
-        };
+      //   let body = {
+      //     "keyword" : keyWord
+      //   };
    
-        axios.post(`/api/analysis?date=${date}&chatroomNum=${chatroomNum}`, null, {params: body})
+        axios.post(`/api/analysis?date=${date}&chatroomNum=${chatroomNum}`)
           .then((res) => {
             console.log(res.status);
             if (res.status === 200) {
