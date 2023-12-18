@@ -86,7 +86,7 @@ const Analysis = () => {
           "keyword" : keyWord
         };
    
-        axios.post(`/api/keyword?date=${date}&chatroomNum=${chatroomNum}`)
+        axios.post(`/api/analysis?date=${date}&chatroomNum=${chatroomNum}`)
           .then((res) => {
             console.log(res.status);
             if (res.status === 200) {

@@ -427,6 +427,52 @@
    background-size: cover;
 }
 
+.e71_46 {
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   background-color: rgba(245.00000059604645, 245.00000059604645, 245.00000059604645, 1);
+   width: 1466px;
+   height: 20px;
+   position: absolute;
+   left: 227px;
+   top: 132px;
+   border-top-left-radius: 40px;
+   border-top-right-radius: 40px;
+   border-bottom-left-radius: 40px;
+   border-bottom-right-radius: 40px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: relative; /* 추가 */
+
+}
+.e71_46 .black-circle {
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   transition: transform 0.3s;
+}
+
+.e71_46 .black-circle:hover {
+   background-color: black;
+   transform: scale(5);
+}
+.text-overlay {
+   position: absolute;
+   top: 150%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: black;
+   font-size: 10px;
+   font-weight: bold;
+   opacity: 0;
+   pointer-events: none;
+   transition: opacity 0.3s;
+}
+
+.e71_46 .black-circle:hover .text-overlay {
+   opacity: 1;
+}
+
 .App-header {
    background-color: #282c34;
    min-height: 100vh;
