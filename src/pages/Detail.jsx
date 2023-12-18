@@ -65,7 +65,7 @@ const Detail = () => {
       "date": "2023-06-20"
    }; */
 
-   const chatroomData = [
+   /* const chatroomData = [
       {
          "shuffleMessage": [
             " 한시간 반정도뒤에",
@@ -174,9 +174,28 @@ const Detail = () => {
          ],
          "date": "2023-06-06"
       }
-   ];
+   ]; */
 
+   const [chatroomData, setChatroomData] = useState([]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+         console.log('a');
+        
+          const response = await fetch(`/detail?chatroomNum=${chatroomNum}`);
+          const body = await response.json();
+          console.log(body);
+          // Set the fetched data into chatroomData state
+          setChatroomData(body);
+        
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, [chatroomNum]);
 
 
    const [userName, setUserName] = useState("");
@@ -231,7 +250,7 @@ const Detail = () => {
    };
 
 
-   useEffect(() => {
+   /* useEffect(() => {
       const fetchData = async () => {
          try {
             const response = await fetch(`/detail?chatroomNum=${chatroomNum}`);
@@ -251,7 +270,7 @@ const Detail = () => {
       };
 
       fetchData();
-   }, []);
+   }, []); */
 
 
    return (

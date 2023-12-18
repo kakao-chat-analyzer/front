@@ -15,7 +15,7 @@ function buttonClick() {
 }
 
 function introductionClick() {
-    window.location.href = "/introduction";
+    window.location.href = "/intronpmduction";
 }
 
 function detailClick(chatroomNum) {
@@ -98,7 +98,7 @@ const Main = () => {
                 console.log("a");
                 console.log(body);
 
-                const roomNumbers = body.roomNumber || []; // 방 번호가 들어있는 배열 가져오기
+                const roomNumbers = body.chatroomNum || []; // 방 번호가 들어있는 배열 가져오기
 
                 // 각 방 번호에 대해 존재 여부 확인하여 상태 설정
                 setRoom1Visible(roomNumbers.includes(1));
