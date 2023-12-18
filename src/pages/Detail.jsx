@@ -29,9 +29,6 @@ const Detail = () => {
    const searchParams = new URLSearchParams(location.search);
    const chatroomNum = searchParams.get('chatroomNum');
 
-
-   
-
    const [chatroomData, setChatroomData] = useState([]);
    const [Date, setDate] = useState([]);
 

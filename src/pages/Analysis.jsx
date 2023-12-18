@@ -38,7 +38,7 @@ const Analysis = () => {
       const fetchData = async () => {
         try {
             console.log("a");
-            const response = await fetch(`/api/analysis?date=${date}&chatroomNum=${chatroomNum}`);
+            const response = await fetch(`/api/keyword?date=${date}&chatroomNum=${chatroomNum}`);
             const body = await response.json();
             
             // Set the fetched data into chatroomData state
