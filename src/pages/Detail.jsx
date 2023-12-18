@@ -181,11 +181,8 @@ const Detail = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-         console.log('a');
-        
-          const response = await fetch(`/detail?chatroomNum=${chatroomNum}`);
+          const response = await fetch(`/api/detail?chatroomNum=${chatroomNum}`);
           const body = await response.json();
-          console.log(body);
           // Set the fetched data into chatroomData state
           setChatroomData(body);
         
