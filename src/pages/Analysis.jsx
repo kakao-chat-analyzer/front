@@ -110,15 +110,38 @@ const Analysis = () => {
     }
     console.log("KETWORD")
     console.log(keyWord)
-    const data = [
-      { x: 'IT', value: 590000000, category: 'Sino-Tibetan' },
-      { x: 'Python', value: 283000000, category: 'Indo-European' },
-      { x: '소프트웨어', value: 544000000, category: 'Indo-European' },
-      { x: 'JAVA', value: 527000000, category: 'Indo-European' },
-      { x: 'C++', value: 422000000, category: 'Afro-Asiatic' },
-      { x: 'HTML', value: 620000000, category: 'Afro-Asiatic' },
-    ];
-
+    const data = keyWord.map((keyword_data, index) => {
+      // let randomValue = Math.floor(Math.random() * (590000000 - 422000000 + 1)) + 422000000;
+      const randomValue = 800 - index*100
+      // const categories = ['Sino-Tibetan', 'Indo-European', 'Afro-Asiatic'];
+      const categories = [
+         'Sino-Tibetan',
+         'Indo-European',
+         'Afro-Asiatic',
+         'Niger-Congo',
+         'Austronesian',
+         'Dravidian',
+         'Turkic',
+         'Uralic',
+         'Semitic',
+         'Japonic',
+         'Koreanic',
+         'Sino-Austronesian',
+         'Kra-Dai',
+         'Paleosiberian',
+         'Constructed',
+         'Isolate',
+         'Other',
+       ];
+      const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+    
+      return {
+        x: keyword_data,
+        value: randomValue,
+        category: randomCategory,
+      };
+    });
+    
     const TagCloudChart = ({ data }) => {
       const chartContainerRef = useRef(null);
       useEffect(() => {
@@ -127,15 +150,20 @@ const Analysis = () => {
             chartContainerRef.current.innerHTML = '';
           }
           const chart = anychart.tagCloud(data);
+          chart.title("키워드 추출 결과");
           chart.angles([0]);
           chart.container('container');
+          chart.background("#BACEE0")
           chart.draw();
+          
         });
       }, [data]);
-    
+
       return (
-        <div className="e111_3_keyword chart-area">
-          <div ref={chartContainerRef} id="container" style={{ width: '100%', height: '100%' }}></div>
+        <div className="e111_3_keyword">
+          <div className="tag_div">
+            <div ref={chartContainerRef} id="container"></div>
+          </div>
         </div>
       );
     };

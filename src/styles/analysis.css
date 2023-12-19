@@ -157,6 +157,15 @@
    /* filter: blur(3px);
    -webkit-filter: blur(3px); */
 }
+.tag_div{
+   width: 90%;
+   height: 99%;
+   padding-left: 40px;
+}
+#container{
+   width: 100%;
+   height: 100%;
+}
 .e585_16 {
    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
    background-color: rgba(186.0000041127205, 206.0000029206276, 224.000001847744, 1);
