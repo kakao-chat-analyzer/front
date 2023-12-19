@@ -142,7 +142,21 @@
    /* filter: blur(3px);
    -webkit-filter: blur(3px); */
 }
-
+.e111_3_keyword {
+   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+   background-color: rgba(186.0000041127205, 206.0000029206276, 224.000001847744, 1);
+   width: 1004px;
+   height: 400px;
+   position: absolute;
+   left: 232px;
+   top: 204px;
+   border-top-left-radius: 50px;
+   border-top-right-radius: 50px;
+   border-bottom-left-radius: 50px;
+   border-bottom-right-radius: 50px;
+   /* filter: blur(3px);
+   -webkit-filter: blur(3px); */
+}
 .e585_16 {
    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
    background-color: rgba(186.0000041127205, 206.0000029206276, 224.000001847744, 1);

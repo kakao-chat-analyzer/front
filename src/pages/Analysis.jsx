@@ -1,9 +1,11 @@
 import React from "react";
 import '../styles/analysis.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation , useParams} from 'react-router-dom';
 import axios from "axios";
+import anychart from 'anychart';
+
 
 
 
@@ -102,8 +104,38 @@ const Analysis = () => {
             }
           });
     }
+    console.log("KETWORD")
+    console.log(keyWord)
+    const data = [
+      { x: 'IT', value: 590000000, category: 'Sino-Tibetan' },
+      { x: 'Python', value: 283000000, category: 'Indo-European' },
+      { x: '소프트웨어', value: 544000000, category: 'Indo-European' },
+      { x: 'JAVA', value: 527000000, category: 'Indo-European' },
+      { x: 'C++', value: 422000000, category: 'Afro-Asiatic' },
+      { x: 'HTML', value: 620000000, category: 'Afro-Asiatic' },
+    ];
 
-   
+    const TagCloudChart = ({ data }) => {
+      const chartContainerRef = useRef(null);
+      useEffect(() => {
+        anychart.onDocumentReady(function () {
+         if (chartContainerRef.current) {
+            chartContainerRef.current.innerHTML = '';
+          }
+          const chart = anychart.tagCloud(data);
+          chart.angles([0]);
+          chart.container('container');
+          chart.draw();
+        });
+      }, [data]);
+    
+      return (
+        <div className="e111_3_keyword chart-area">
+          <div ref={chartContainerRef} id="container" style={{ width: '100%', height: '100%' }}></div>
+        </div>
+      );
+    };
+
 
    return (
       <div id="App">
@@ -129,7 +161,7 @@ const Analysis = () => {
             <div class="e585_16"></div>
             <div class="e602_19"></div>
             <form id="keyword-form" onSubmit={keywordFunc}>
-               {!isKey ? <button type="submit" id="key" style={{ cursor: "pointer" }}></button> : <div></div>}
+               {!isKey ? <button type="submit" id="key" style={{ cursor: "pointer" }}></button> : <TagCloudChart data={data} />}
             </form>
             <span class="e602_26">날짜</span>
             <span class="e420_4">내가 말한 횟수</span>
