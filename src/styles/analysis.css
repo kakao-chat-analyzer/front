@@ -158,14 +158,13 @@
 }
 
 .e602_19 {
-   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
    background-color: rgba(255, 255, 255, 1);
-   width: 260px;
-   height: 277px;
+   width: 978px;
+   height: 289px;
    position: absolute;
-   left: 277px;
-   top: 655px;
-   border-radius: 25px;
+   left: 245px;
+   top: 650px;
+   border-radius: 40px;
 }
 
 .e602_22 {

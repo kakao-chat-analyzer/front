@@ -128,8 +128,6 @@ const Analysis = () => {
             <div class="e111_3"></div>
             <div class="e585_16"></div>
             <div class="e602_19"></div>
-            <div class="e602_22"></div>
-            <div class="e602_23"></div>
             <form id="keyword-form" onSubmit={keywordFunc}>
                {!isKey ? <button type="submit" id="key" style={{ cursor: "pointer" }}></button> : <div></div>}
             </form>
