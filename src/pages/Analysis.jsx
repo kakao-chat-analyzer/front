@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useLocation , useParams} from 'react-router-dom';
 import axios from "axios";
 import anychart from 'anychart';
-
+import ReactApexChart from 'react-apexcharts';
 
 
 
@@ -32,9 +32,8 @@ const Analysis = () => {
    const [userName, setUserName] = useState("");
    const [fre , setFre] = useState([]);
    const [keyWord , setKeyWord] = useState([]);
+   const [totalChat, setTotalChat] = useState("");
    const [isKey, setIsKey] = useState(false);
-
-   const [dailyData, setdailyData] = useState([]);
 
    const [messages, setMessages] = useState([]);
    const [users, setUsers] = useState([]);
@@ -54,13 +53,15 @@ const Analysis = () => {
             setMessages(dailyMessages);
             setUsers(dailyUser);
             
+            setTotalChat(body.chatTimes);
+            
             const key = body.keyword;
             setKeyWord(key);
             console.log(key)
             setIsKey(key.length)
             const fres = body.frequently;
             setFre(fres);
-            console.log(fres);
+            console.log("aaaaaaaaaaa"+fre);
             
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -70,9 +71,9 @@ const Analysis = () => {
       fetchData();
     }, [chatroomNum]);
 
-    /* if (keyWord.length === 0){
-      console.log("b");
-    } */
+    
+
+    
 
    useEffect(() => {
       const fetchData = async () => {
@@ -108,8 +109,9 @@ const Analysis = () => {
             }
           });
     }
-    console.log("KETWORD")
-    console.log(keyWord)
+    
+
+
     const data = keyWord.map((keyword_data, index) => {
       // let randomValue = Math.floor(Math.random() * (590000000 - 422000000 + 1)) + 422000000;
       const randomValue = 800 - index*100
@@ -142,6 +144,65 @@ const Analysis = () => {
       };
     });
     
+    const [cu,setcu] = useState([]);
+    const [cut,setcut] = useState([]);
+
+    const splitEvenOdd = (arr) => {
+      
+      const { evenValues, oddValues } = arr.reduce(
+        (acc, value, index) => {
+          if (index % 2 === 0) {
+            acc.evenValues.push(value);
+          } else {
+            acc.oddValues.push(value);
+          }
+          return acc;
+        },
+        { evenValues: [], oddValues: [] }
+      );
+    
+      setcu(evenValues);
+      setcut(oddValues);
+    };
+    
+    console.log("aaaaaasasasasasass" + cu);
+    /* const { chatUser, chatUserTime } = splitEvenOdd(fre); */
+
+    
+    const ApexChart = () => {
+      
+      const [chartState] = useState({
+        series: [{
+          data: cut
+        }],
+        options: {
+          chart: {
+            type: 'bar',
+            height: 350 // Set the desired height here
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              horizontal: true,
+            }
+          },
+          dataLabels: {
+            enabled: false
+          },
+          xaxis: {
+            categories: cu
+          }
+        }
+      });
+    
+      return (
+        <div id="chart">
+          <ReactApexChart options={chartState.options} series={chartState.series} type="bar" height={chartState.options.chart.height} />
+        </div>
+      );
+    };
+   
+
     const TagCloudChart = ({ data }) => {
       const chartContainerRef = useRef(null);
       useEffect(() => {
@@ -168,6 +229,8 @@ const Analysis = () => {
       );
     };
 
+    
+
 
    return (
       <div id="App">
@@ -188,7 +251,9 @@ const Analysis = () => {
             
             <div class="e111_3"></div>
             <div class="e585_16"></div>
-            <div class="e602_19"></div>
+            <div class="e602_19" style={{ overflow: "auto"}}>
+               {/* <ApexChart /> */}
+            </div>
             <form id="keyword-form" onSubmit={keywordFunc}>
                {!isKey ? <button type="submit" id="key" style={{ cursor: "pointer" }}></button> : <TagCloudChart data={data} />}
 
@@ -197,9 +262,9 @@ const Analysis = () => {
             
             
             <span class="e602_26">날짜</span>
-            <span class="e420_4">내가 말한 횟수</span>
+            {/* <span class="e420_4">내가 말한 횟수</span>
             <span class="e420_3">대화 횟수</span>
-            <span class="e420_6">상대가 말한 횟수</span>
+            <span class="e420_6">상대가 말한 횟수</span> */}
 
             <div className="chat-container"style={{ overflow: "auto"}}>
                {messages.map((message, index) => (
@@ -215,6 +280,7 @@ const Analysis = () => {
                ))}
             </div>
             {/* <div class="e602_25"></div> */}
+            
          </div>
          
       </div>

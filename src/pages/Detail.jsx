@@ -160,7 +160,7 @@ const Detail = () => {
             <div class="e272_39"> <DateContainer date={dateAll} /> </div>
             
             <div class="e272_4">
-                  <div class="e272_5" onClick={logoClick} style={{ cursor: "pointer" }}></div>   
+                  <div class="e272_111" onClick={logoClick} style={{ cursor: "pointer" }}></div>   
             </div>
             
 

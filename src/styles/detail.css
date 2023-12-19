@@ -192,14 +192,14 @@
    width: 50px;
    height: 50px;
    position: absolute;
-   /* left: 20px;
-   top: 20px; */
+   left: 20px;
+   top: 20px;
    /* background-image: url(images/header___heading_1___link___logo_webp.png); */
    background-repeat: no-repeat;
    background-size: cover;
 }
 
-.e272_5 {
+.e272_111 {
    width: 50px;
    height: 50px;
    position: absolute;
