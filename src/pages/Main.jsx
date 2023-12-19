@@ -23,16 +23,14 @@ function detailClick(chatroomNum) {
 }
 
 const Main = () => {
-    const [modalOpen, setModalOpen] = useState(false);
+    
 
     const navigate = useNavigate();
 
     const [userName, setUserName] = useState("");
 
     // 모달창 노출
-    const showModal = () => {
-        setModalOpen(true);
-    };
+    
 
     let user = useSelector((state) => { return state.user });
     const dispatch = useDispatch();
@@ -210,10 +208,7 @@ const Main = () => {
                 {room8Visible && <div className="folder_image e58_14" onClick={() => detailClick(8)} style={userName ? { cursor: "pointer" } : null}>
                 <span className="chatName1">{userName}의 채팅방 8</span>
                     </div>}
-                <div>
-                    <button className="e" onClick={showModal}>모달 띄우기</button>
-                    {modalOpen && <ModalBasic setModalOpen={setModalOpen} />}
-                </div>
+                
             </div>
 
 
