@@ -91,8 +91,11 @@ const Analysis = () => {
    const renderUserName = userName ? userName + " 님" : "로그인하기";
    console.log("length"+keyWord.length)
    
+   const [buttonClick, setButtonClick] = useState(false);
+
    const keywordFunc = (e) => {
-      // 로딩 중 ui로 변경
+      setButtonClick(true);
+      setIsKey(!isKey);
       e.preventDefault();
    
         axios.post(`/api/keyword?date=${date}&chatroomNum=${chatroomNum}`)
@@ -100,6 +103,7 @@ const Analysis = () => {
             console.log(res.status);
             if (res.status === 200) {
                // 워드 클라우드
+               setButtonClick(false);
               window.location.href = `/analysis?date=${date}&chatroomNum=${chatroomNum}`;
             }
           });
@@ -152,17 +156,19 @@ const Analysis = () => {
             <span onClick={userName ? null : buttonClick} style={userName ? null : { cursor: "pointer" }} class="e272_49">{renderUserName}</span>
             <span onClick={introductionClick} style={{ cursor: "pointer" }} class="e272_50">이용방법</span>
             <div class="e272_51"></div>
-            
 
             
-
-            
-            <div class="e111_3"></div>
+            <div class="e111_3">
+               {buttonClick ? <div className="loading"></div> : ""}
+            </div>
             <div class="e585_16"></div>
             <div class="e602_19"></div>
             <form id="keyword-form" onSubmit={keywordFunc}>
                {!isKey ? <button type="submit" id="key" style={{ cursor: "pointer" }}></button> : <TagCloudChart data={data} />}
+
             </form>
+            
+            
             <span class="e602_26">날짜</span>
             <span class="e420_4">내가 말한 횟수</span>
             <span class="e420_3">대화 횟수</span>

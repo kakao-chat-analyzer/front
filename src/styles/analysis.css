@@ -547,6 +547,22 @@
    background-color: transparent;
  }
 
+.loading{
+   position: absolute;
+   width: 100px;
+   height: 100px;
+   top: 150px;
+   left: 452px;
+   background-image: url(../images/load1.gif);
+   background-repeat: no-repeat;
+   background-size: cover;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+
 .App-header {
    background-color: #282c34;
    min-height: 100vh;
