@@ -70,6 +70,20 @@ const Detail = () => {
       fetchData();
    }, []);
 
+   const [dateAll, setdateAll] = useState([]);
+   useEffect(() => {
+      const fetchData = async () => {
+         try {
+            const response = await fetch(`/api/date?chatroomNum=${chatroomNum}`);
+            const body = await response.json();
+            setdateAll(body)
+         } catch (error) {
+            console.error('Error fetching data:', error);
+         }
+      };
+
+      fetchData();
+   }, []);
    const renderUserName = userName ? userName + " 님" : "로그인하기";
 
    const ChatBubble = ({ user, message }) => {
@@ -107,31 +121,18 @@ const Detail = () => {
          </>
       );
    };
+   const DateContainer = ({ date }) => {
+      return (
+         <>
+            {date.map((date, dateIndex) => (
+               <div class="black-circle">
+                 <div class="text-overlay">{date}</div>
+               </div>
+            ))}
+         </>
+      );
+    };
 
-
-   /* useEffect(() => {
-      const fetchData = async () => {
-         try {
-            const response = await fetch(`/detail?chatroomNum=${chatroomNum}`);
-            const body = await response.json();
-
-            // 여기서 가져온 데이터를 사용할 수 있습니다.
-            console.log(body); // 받아온 데이터 확인
-
-            // 받아온 데이터에 따라 상태 변경 또는 원하는 작업 수행
-            // 예를 들어, 받아온 데이터를 가지고 상태를 변경하는 등의 작업을 수행할 수 있습니다.
-            // setChatroom1Visible(body.someProperty);
-            // 위와 같이 받아온 데이터를 사용하여 상태 변경 또는 다른 작업을 수행합니다.
-
-         } catch (error) {
-            console.error('Error fetching data:', error);
-         }
-      };
-
-      fetchData();
-   }, []); */
-
-   
       const handleRefresh = () => {
         window.location.reload(); // Reload the page
       }
@@ -144,29 +145,11 @@ const Detail = () => {
             <div class="e272_3"></div>
 
             
-            <div class="e272_39"></div>
+            <div class="e272_39"> <DateContainer date={dateAll} /> </div>
             <div class="e272_4">
                <div class="e272_5" onClick={logoClick} style={{ cursor: "pointer" }}></div>
             </div>
             
-            
-            
-            {/* <div className="chat-container" style={{ overflow: "auto" }}>
-               {chatData.shuffleMessage.map((message, index) => (
-                  <ChatBubble
-                     key={index}
-                     user={chatData.shuffleUser[index]}
-                     message={message}
-                  />
-               ))}
-            </div> */}
-            
-            
-            {/* <div class = "e2"></div>
-            <div class = "e3"></div>
-            <div class = "e4"></div>
-            <div></div>
-            <div></div> */}
 
             <ChatroomContainer chatrooms={chatroomData} />
 
