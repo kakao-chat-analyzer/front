@@ -60,8 +60,9 @@ const Analysis = () => {
             console.log(key)
             setIsKey(key.length)
             const fres = body.frequently;
+            console.log("asdasfasdgsagsdagsd")
+            console.log("길이입니다!!"+fres.length)
             setFre(fres);
-            console.log("aaaaaaaaaaa"+fre);
             
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -113,9 +114,7 @@ const Analysis = () => {
 
 
     const data = keyWord.map((keyword_data, index) => {
-      // let randomValue = Math.floor(Math.random() * (590000000 - 422000000 + 1)) + 422000000;
       const randomValue = 800 - index*100
-      // const categories = ['Sino-Tibetan', 'Indo-European', 'Afro-Asiatic'];
       const categories = [
          'Sino-Tibetan',
          'Indo-European',
@@ -147,28 +146,25 @@ const Analysis = () => {
     const [cu,setcu] = useState([]);
     const [cut,setcut] = useState([]);
 
-    const splitEvenOdd = (arr) => {
-      
-      const { evenValues, oddValues } = arr.reduce(
-        (acc, value, index) => {
-          if (index % 2 === 0) {
-            acc.evenValues.push(value);
-          } else {
-            acc.oddValues.push(value);
-          }
-          return acc;
-        },
-        { evenValues: [], oddValues: [] }
-      );
-    
-      setcu(evenValues);
-      setcut(oddValues);
+   const splitEvenOdd = (arr) => {
+      let odd_li = [];
+      let even_li = [];
+      arr.forEach((data, idx) => {
+        if (idx % 2 === 0) {
+          even_li.push(data);
+        } else {
+          odd_li.push(data);
+        }
+      });
+  
+      setcu(even_li);
+      setcut(odd_li);
     };
-    
-    console.log("aaaaaasasasasasass" + cu);
-    /* const { chatUser, chatUserTime } = splitEvenOdd(fre); */
+  
+    useEffect(() => {
+      splitEvenOdd(fre);
+    }, []); 
 
-    
     const ApexChart = () => {
       
       const [chartState] = useState({
@@ -252,7 +248,7 @@ const Analysis = () => {
             <div class="e111_3"></div>
             <div class="e585_16"></div>
             <div class="e602_19" style={{ overflow: "auto"}}>
-               {/* <ApexChart /> */}
+               <ApexChart />
             </div>
             <form id="keyword-form" onSubmit={keywordFunc}>
                {!isKey ? <button type="submit" id="key" style={{ cursor: "pointer" }}></button> : <TagCloudChart data={data} />}
@@ -262,9 +258,6 @@ const Analysis = () => {
             
             
             <span class="e602_26">날짜</span>
-            {/* <span class="e420_4">내가 말한 횟수</span>
-            <span class="e420_3">대화 횟수</span>
-            <span class="e420_6">상대가 말한 횟수</span> */}
 
             <div className="chat-container"style={{ overflow: "auto"}}>
                {messages.map((message, index) => (
