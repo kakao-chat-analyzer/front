@@ -483,11 +483,12 @@
    left: 50%;
    transform: translate(-50%, -50%);
    color: black;
-   font-size: 10px;
+   font-size: 8px;
    font-weight: bold;
    opacity: 0;
    pointer-events: none;
-   transition: opacity 0.3s;
+   white-space: nowrap;
+   transition: opacity 0.1s;
 }
 
 .e71_46 .black-circle:hover .text-overlay {
