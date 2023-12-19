@@ -186,15 +186,14 @@ const Analysis = () => {
             <div class="e272_51"></div>
 
             
-            <div class="e111_3">
-               {buttonClick ? <div className="loading"></div> : ""}
-            </div>
+            <div class="e111_3"></div>
             <div class="e585_16"></div>
             <div class="e602_19"></div>
             <form id="keyword-form" onSubmit={keywordFunc}>
                {!isKey ? <button type="submit" id="key" style={{ cursor: "pointer" }}></button> : <TagCloudChart data={data} />}
 
             </form>
+            {buttonClick ? <div className="loading"></div> : ""}
             
             
             <span class="e602_26">날짜</span>
