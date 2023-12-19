@@ -90,18 +90,18 @@ const Analysis = () => {
    console.log("length"+keyWord.length)
    
    const keywordFunc = (e) => {
+      // 로딩 중 ui로 변경
       e.preventDefault();
    
         axios.post(`/api/keyword?date=${date}&chatroomNum=${chatroomNum}`)
           .then((res) => {
             console.log(res.status);
             if (res.status === 200) {
+               // 워드 클라우드
               window.location.href = `/analysis?date=${date}&chatroomNum=${chatroomNum}`;
             }
           });
     }
-
-   
 
    
 
