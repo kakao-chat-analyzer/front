@@ -121,19 +121,27 @@ const Detail = () => {
          </>
       );
    };
+
    const DateContainer = ({ date }) => {
       return (
-         <>
-            {date.map((date, dateIndex) => (
-               <a className= "asd" href={'/analysis?date='+ date + '&chatroomNum=' + chatroomNum}>
-               <div class="black-circle">
-                  
-                     <div class="text-overlay">{date}</div>
-                  
-               </div>
-               </a>
-            ))}
-         </>
+        <>
+          {date.map((dateItem, dateIndex) => {
+            let isCurrentDate = false;
+    
+            Date.forEach((nowDate, idx) => {
+              if (dateItem === nowDate) {
+                isCurrentDate = true;
+              }
+            });
+            return (
+            <a className= "asd" href={'/analysis?date='+ dateItem + '&chatroomNum=' + chatroomNum}>
+                <div className={isCurrentDate ? "black-circle-unique" : "black-circle-normal"}>
+                  <div className="text-overlay">{dateItem}</div>
+                </div>
+              </a>
+            );
+          })}
+        </>
       );
     };
 
@@ -150,8 +158,9 @@ const Detail = () => {
 
             
             <div class="e272_39"> <DateContainer date={dateAll} /> </div>
+            
             <div class="e272_4">
-               <div class="e272_5" onClick={logoClick} style={{ cursor: "pointer" }}></div>
+                  <div class="e272_5" onClick={logoClick} style={{ cursor: "pointer" }}></div>   
             </div>
             
 
