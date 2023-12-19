@@ -46,7 +46,7 @@
     top: 20px;
 }
 
-.e42_21 {
+.e42_213 {
     width: 50px;
     height: 50px;
     position: absolute;
@@ -128,17 +128,17 @@
     background-size: cover;
 }
 
-.e58_2 {
+.e58_21 {
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     color: rgba(17.00000088661909, 17.00000088661909, 17.00000088661909, 1);
-    width: 108.16999816894531px;
+    width: 187px;
     height: 19px;
     position: absolute;
-    left: 911px;
-    top: 133px;
+    left: 866px;
+    top: 117px;
     font-family: 'Noto Sans CJK KR bold';
     text-align: center;
-    font-size: 39px;
+    font-size: 49px;
     letter-spacing: 2;
 }
 
@@ -191,9 +191,8 @@
     position: absolute;
     left: 20px;
     top: 245px;
-    font-family: 'Noto Sans CJK KR';
     text-align: center;
-    font-size: 29px;
+    font-size: 30px;
 }
 .e58_7 {
     width: 253px;
@@ -356,6 +355,28 @@ input[type="file"] {
     color: rgba(255, 255, 255, 1);
     line-height: 40px;
 }
+
+.group4{
+    width: 821px;
+    height: 796px;
+    position: absolute;
+    left: 263px;
+    top: 156px;
+    background-image: url(../images/Group\ 4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.group123{
+    width: 555.781px;
+    height: 657px;  
+    position: absolute;
+    left: 1089px;
+    top: 174px;
+    background-image: url(../images/Group\ 123.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .App-header {
     background-color: #282c34;
     min-height: 100vh;

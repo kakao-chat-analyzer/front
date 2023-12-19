@@ -10,36 +10,23 @@ const Introduction = () => {
    
    return (
    
-         <div id="App">
-            
-         <div class="e93_90">
-            <div class="e93_96">
-               <div class="e93_97"></div>
-            </div>
-            <div class="e114_2"></div>
-            
-               <div class="e114_4"></div>
-               <div class="e114_5"></div>
-               <div class="e114_6"></div>
-               <div class="e114_7"></div>
-            
-            <span class="e93_100">우리의 대화를 추억하자</span>
-            
-            <div class="e95_139">
-               <div class="e93_102"></div>
-            </div>
-            
-            <div class="e381_5"></div>
-            <span className="e42_q">카카오톡</span>
-            <span className="e42_w">추억 저장소</span>
-            <span className="e42_12">오승주님</span>
-            <span className="e204_6">이용방법</span>
-            <div className="e54_2"></div>
-            <div class="e272_48"></div>
-            <div onClick={buttonClick} style={{ cursor: "pointer" }} class="e272_5"></div>
+      <div id="App">
+         
+         <div className="Introduction">
+         <div className="Rectangle10"></div>
+         <div onClick={buttonClick} style={{ cursor: "pointer" }} className="Rectangle4"></div>
+         <div className="TextContent">
+         <span>우리의 </span>
+         <span>대화를 </span>
+         <span>추억하자</span>
          </div>
+         <div className="ImageContainer">
+         <div className="Image7" src="../images/image_3"></div>
+         </div>
+         <div onClick={buttonClick} style={{ cursor: "pointer" }} className="TextToRemember">추억하기</div>
+      </div>
 
-         </div>
+      </div>
 
          );
 };

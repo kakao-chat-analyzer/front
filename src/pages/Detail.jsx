@@ -7,7 +7,7 @@ function buttonClick() {
 }
 
 function introductionClick() {
-   window.location.href = "/introduction";
+   window.location.href = "/howto";
 }
 
 function logoClick() {

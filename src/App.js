@@ -7,6 +7,7 @@ import Main from "./pages/Main";
 import Detail from './pages/Detail'
 import Introduction from './pages/Introduction';
 import Analysis from './pages/Analysis';
+import Howto from './pages/Howto';
 import { getResizeEventListener } from "./services/responsiveFrame";
 
 
@@ -25,12 +26,13 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/introduction" element={<Introduction />} />
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/detail" element={<Detail />} />
-        <Route path="/introduction" element={<Introduction />} />
+        <Route path="/detail" element={<Detail />} /> 
         <Route path="/analysis" element={<Analysis />} />
+        <Route path="/howto" element={<Howto />} />
       </Routes>
     </Router>
   );
