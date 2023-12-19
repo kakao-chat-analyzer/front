@@ -15,7 +15,7 @@ function buttonClick() {
 }
 
 function introductionClick() {
-    window.location.href = "/intronpmduction";
+    window.location.href = "/introduction";
 }
 
 function detailClick(chatroomNum) {
