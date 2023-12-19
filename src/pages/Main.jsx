@@ -150,7 +150,8 @@ const Main = () => {
 
                 if (res.status === 200) {
                     console.log("파일 업로드 성공");
-
+                    alert("File uploaded successfully!");
+                    window.location.href = `/`;
                 } else if (res.status === 401) {
                     setMsg("다시 입력해주세요.");
                 }
