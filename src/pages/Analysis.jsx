@@ -294,10 +294,13 @@ const Analysis = () => {
             </form>
             {buttonClick ? <div className="loading"></div> : ""}
             
-            <div class="e71_46"> <DateContainer dates={dateAll} /> </div>
+            
             <span class="e602_26">날짜</span>
+            <div className="chat-margin">
+               <p>{date}   전체대화</p>
+            </div>
 
-            <div className="chat-container"style={{ overflow: "auto"}}>
+            <div className="chat-container" style={{ overflow: "auto"}}>
                {messages.map((message, index) => (
                <div
                   key={index}
@@ -308,8 +311,9 @@ const Analysis = () => {
                      {message}
                   </div>
                </div>
-               ))}
+               ))}   
             </div>
+            <div class="e71_46"> <DateContainer dates={dateAll} /> </div>
             {/* <div class="e602_25"></div> */}
             
          </div>
