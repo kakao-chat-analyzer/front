@@ -173,10 +173,10 @@ const Detail = () => {
             <div id="index_wrap">
                <ul id ="leftToRight">
                   
-                  <li><a href={'/analysis?date='+ Date[0] + '&chatroomNum=0'}>{Date[0]}</a></li>
-                  <li><a href={'/analysis?date='+ Date[1] + '&chatroomNum=0'}>{Date[1]}</a></li>
-                  <li><a href={'/analysis?date='+ Date[2] + '&chatroomNum=0'}>{Date[2]}</a></li>
-                  <li><a href={'/analysis?date='+ Date[3] + '&chatroomNum=0'}>{Date[3]}</a></li>
+                  <li><a href={'/analysis?date='+ Date[0] + '&chatroomNum=' + chatroomNum}>{Date[0]}</a></li>
+                  <li><a href={'/analysis?date='+ Date[1] + '&chatroomNum=' + chatroomNum}>{Date[1]}</a></li>
+                  <li><a href={'/analysis?date='+ Date[2] + '&chatroomNum=' + chatroomNum}>{Date[2]}</a></li>
+                  <li><a href={'/analysis?date='+ Date[3] + '&chatroomNum=' + chatroomNum}>{Date[3]}</a></li>
                </ul>
             </div>
 
