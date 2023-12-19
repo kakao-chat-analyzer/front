@@ -30,7 +30,7 @@ const Analysis = () => {
    const date = searchParams.get('date');
 
    const [userName, setUserName] = useState("");
-   const [fre , setFre] = useState([]);
+
    const [keyWord , setKeyWord] = useState([]);
    const [totalChat, setTotalChat] = useState("");
    const [isKey, setIsKey] = useState(false);
@@ -57,13 +57,9 @@ const Analysis = () => {
             
             const key = body.keyword;
             setKeyWord(key);
-            console.log(key)
             setIsKey(key.length)
             const fres = body.frequently;
-            console.log("asdasfasdgsagsdagsd")
-            console.log("길이입니다!!"+fres.length)
-            setFre(fres);
-            
+            splitEvenOdd(fres)
         } catch (error) {
           console.error('Error fetching data:', error);
         }
@@ -91,7 +87,7 @@ const Analysis = () => {
    }, []);
 
    const renderUserName = userName ? userName + " 님" : "로그인하기";
-   console.log("length"+keyWord.length)
+
    
    const [buttonClick, setButtonClick] = useState(false);
 
@@ -156,14 +152,9 @@ const Analysis = () => {
           odd_li.push(data);
         }
       });
-  
       setcu(even_li);
       setcut(odd_li);
-    };
-  
-    useEffect(() => {
-      splitEvenOdd(fre);
-    }, []); 
+    }; 
 
     const ApexChart = () => {
       
