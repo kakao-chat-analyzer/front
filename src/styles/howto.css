@@ -185,15 +185,7 @@
     background-image: url(../images/image_folder.png);
     background-size: cover
 }
-.chatName1{
-    width: 223px;
-    height: 40px;
-    position: absolute;
-    left: 20px;
-    top: 245px;
-    text-align: center;
-    font-size: 30px;
-}
+
 .e58_7 {
     width: 253px;
     height: 254px;

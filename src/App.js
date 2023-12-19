@@ -9,6 +9,8 @@ import Introduction from './pages/Introduction';
 import Analysis from './pages/Analysis';
 import Howto from './pages/Howto';
 import { getResizeEventListener } from "./services/responsiveFrame";
+import Favicon from 'react-favicon';
+
 
 
 const App = () => {
@@ -34,6 +36,7 @@ const App = () => {
         <Route path="/analysis" element={<Analysis />} />
         <Route path="/howto" element={<Howto />} />
       </Routes>
+      <Favicon url="./images/image_1.png" />
     </Router>
   );
 
