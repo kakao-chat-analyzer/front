@@ -125,9 +125,13 @@ const Detail = () => {
       return (
          <>
             {date.map((date, dateIndex) => (
+               <a className= "asd" href={'/analysis?date='+ date + '&chatroomNum=' + chatroomNum}>
                <div class="black-circle">
-                 <div class="text-overlay">{date}</div>
+                  
+                     <div class="text-overlay">{date}</div>
+                  
                </div>
+               </a>
             ))}
          </>
       );
