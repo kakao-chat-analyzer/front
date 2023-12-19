@@ -96,6 +96,52 @@
    border-bottom-right-radius: 40px;
 }
 
+.e71_46 .black-circle-normal {
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   transition: transform 0.3s;
+}
+
+.e71_46 .black-circle-normal:hover {
+   background-color: black;
+   transform: scale(5);
+}
+.e71_46 .black-circle-unique {
+   width: 10px;
+   height: 10px;
+   border-radius: 100%;
+   background-color: black;
+   transition: transform 0.3s;
+}
+
+.e71_46 .black-circle-unique:hover {
+   background-color: black;
+   transform: scale(5);
+}
+.text-overlay {
+   position: absolute;
+   top: 150%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: black;
+   font-size: 4px;
+   font-weight: bold;
+   opacity: 0;
+   pointer-events: none;
+   white-space: nowrap;
+   transition: opacity 0.1s;
+}
+
+.e71_46 .black-circle-normal:hover .text-overlay {
+   opacity: 1;
+}
+.e71_46 .black-circle-unique:hover .text-overlay {
+   opacity: 1;
+}
+
+
+
 .e71_47 {
    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
    background-color: rgba(186.0000041127205, 206.0000029206276, 224.000001847744, 1);

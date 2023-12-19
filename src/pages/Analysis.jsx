@@ -60,6 +60,7 @@ const Analysis = () => {
             setIsKey(key.length)
             const fres = body.frequently;
             splitEvenOdd(fres)
+            
         } catch (error) {
           console.error('Error fetching data:', error);
         }
@@ -106,7 +107,21 @@ const Analysis = () => {
             }
           });
     }
-    
+
+    const [dateAll, setdateAll] = useState([]);
+    useEffect(() => {
+       const fetchData = async () => {
+          try {
+             const response = await fetch(`/api/date?chatroomNum=${chatroomNum}`);
+             const body = await response.json();
+             setdateAll(body)
+          } catch (error) {
+             console.error('Error fetching data:', error);
+          }
+       };
+ 
+       fetchData();
+    }, []);
 
 
     const data = keyWord.map((keyword_data, index) => {
@@ -216,9 +231,26 @@ const Analysis = () => {
       );
     };
 
+    const DateContainer = ({ dates }) => {
+      return (
+        <>
+          {dates.map((dateItem, dateIndex) => {
+            let isCurrentDate = false;
+            if (dateItem === date) {
+               isCurrentDate = true;
+             }
+            return (
+            <a className= "asd" href={'/analysis?date='+ dateItem + '&chatroomNum=' + chatroomNum}>
+                <div className={isCurrentDate ? "black-circle-unique" : "black-circle-normal"}>
+                  <div className="text-overlay">{dateItem}</div>
+                </div>
+              </a>
+            );
+          })}
+        </>
+      );
+    };
     
-
-
    return (
       <div id="App">
          <div class="e71_26">
@@ -228,7 +260,7 @@ const Analysis = () => {
 
             <div onClick={logoClick} style={{ cursor: "pointer" }} class="e71_2"></div>
             <span class="e71_30">카카오톡</span><span class="e71_31">추억 저장소</span>
-            <div class="e71_46"></div>
+            <div class="e71_46"> <DateContainer dates={dateAll} /> </div>
            
             
             <span onClick={userName ? null : buttonClick} style={userName ? null : { cursor: "pointer" }} class="e272_49">{renderUserName}</span>
