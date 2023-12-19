@@ -37,7 +37,7 @@ const Analysis = () => {
 
    const [messages, setMessages] = useState([]);
    const [users, setUsers] = useState([]);
-
+   
 
    useEffect(() => {
       const fetchData = async () => {
@@ -53,8 +53,8 @@ const Analysis = () => {
             setMessages(dailyMessages);
             setUsers(dailyUser);
             
-            setTotalChat(body.chatTimes);
-            
+            splitEvenOdd(body.chatTimes);
+            console.log(typeof body.chatTimes)
             const key = body.keyword;
             setKeyWord(key);
             setIsKey(key.length)
@@ -156,10 +156,15 @@ const Analysis = () => {
     
     const [cu,setcu] = useState([]);
     const [cut,setcut] = useState([]);
-
+    let odd_li = [];
+    let even_li = [];
    const splitEvenOdd = (arr) => {
-      let odd_li = [];
-      let even_li = [];
+      
+      if((typeof arr) === "number" ){
+      even_li.push("총 대화 횟수");
+      odd_li.push(arr);
+      }
+      else{
       arr.forEach((data, idx) => {
         if (idx % 2 === 0) {
           even_li.push(data);
@@ -167,6 +172,8 @@ const Analysis = () => {
           odd_li.push(data);
         }
       });
+      
+    }
       setcu(even_li);
       setcut(odd_li);
     }; 
@@ -180,7 +187,7 @@ const Analysis = () => {
         options: {
           chart: {
             type: 'bar',
-            height: 350 // Set the desired height here
+            height: 300// Set the desired height here
           },
           plotOptions: {
             bar: {
@@ -188,12 +195,19 @@ const Analysis = () => {
               horizontal: true,
             }
           },
+          colors: ['#38318E'],
           dataLabels: {
-            enabled: false
+            enabled: false,
+            style: {
+               colors: ['#fff'],
+               size : [40],
+             }
           },
           xaxis: {
-            categories: cu
-          }
+            categories: cu,
+         
+          },
+          
         }
       });
     
@@ -213,7 +227,6 @@ const Analysis = () => {
             chartContainerRef.current.innerHTML = '';
           }
           const chart = anychart.tagCloud(data);
-          chart.title("키워드 추출 결과");
           chart.angles([0]);
           chart.container('container');
           chart.background("#BACEE0")
@@ -260,7 +273,7 @@ const Analysis = () => {
 
             <div onClick={logoClick} style={{ cursor: "pointer" }} class="e71_2"></div>
             <span class="e71_30">카카오톡</span><span class="e71_31">추억 저장소</span>
-            <div class="e71_46"> <DateContainer dates={dateAll} /> </div>
+            
            
             
             <span onClick={userName ? null : buttonClick} style={userName ? null : { cursor: "pointer" }} class="e272_49">{renderUserName}</span>
@@ -271,7 +284,9 @@ const Analysis = () => {
             <div class="e111_3"></div>
             <div class="e585_16"></div>
             <div class="e602_19" style={{ overflow: "auto"}}>
+               <div>
                <ApexChart />
+               </div>
             </div>
             <form id="keyword-form" onSubmit={keywordFunc}>
                {!isKey ? <button type="submit" id="key" style={{ cursor: "pointer" }}></button> : <TagCloudChart data={data} />}
@@ -279,7 +294,7 @@ const Analysis = () => {
             </form>
             {buttonClick ? <div className="loading"></div> : ""}
             
-            
+            <div class="e71_46"> <DateContainer dates={dateAll} /> </div>
             <span class="e602_26">날짜</span>
 
             <div className="chat-container"style={{ overflow: "auto"}}>

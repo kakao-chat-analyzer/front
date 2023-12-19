@@ -462,7 +462,7 @@
    display: block;
    margin-bottom: 50px;
    text-decoration-line: none;
-   top: 170px; /* 전체 요소를 위로 이동 */
+   top: 150px; /* 전체 요소를 위로 이동 */
 }
 
 #leftToRight ul {
@@ -523,7 +523,7 @@
 #index_wrap ul li {
    position: relative;
    display: inline-block;
-   margin: 0 20px;
+   margin: 0 10px;
    height: 40px;
    text-align: center;
    line-height: 30px;
